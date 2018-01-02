@@ -7,12 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		004468C91FFBFEBE00326650 /* TableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004468C81FFBFEBE00326650 /* TableViewExtension.swift */; };
+		004468D21FFBFFF700326650 /* AddFavoritePlaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004468D01FFBFFF700326650 /* AddFavoritePlaceVC.swift */; };
+		004468D31FFBFFF700326650 /* AddFavoritePlaceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004468D11FFBFFF700326650 /* AddFavoritePlaceVC.xib */; };
+		004468D51FFC00F200326650 /* AddFavoritePlaceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004468D41FFC00F200326650 /* AddFavoritePlaceInteractor.swift */; };
+		004468D71FFC013700326650 /* BaseCellInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004468D61FFC013700326650 /* BaseCellInteractor.swift */; };
+		004468F21FFC097A00326650 /* MainPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004468F01FFC097A00326650 /* MainPhotoCell.swift */; };
+		004468F31FFC097A00326650 /* MainPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004468F11FFC097A00326650 /* MainPhotoCell.xib */; };
+		004468F51FFC09F400326650 /* MainPhotoCellInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004468F41FFC09F400326650 /* MainPhotoCellInteractor.swift */; };
 		00CD757C1FEE6220001E6F96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CD757B1FEE6220001E6F96 /* AppDelegate.swift */; };
 		00CD75831FEE6220001E6F96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00CD75821FEE6220001E6F96 /* Assets.xcassets */; };
 		00CD75961FEE63AA001E6F96 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00CD75941FEE63AA001E6F96 /* LaunchScreen.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		004468C81FFBFEBE00326650 /* TableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExtension.swift; sourceTree = "<group>"; };
+		004468D01FFBFFF700326650 /* AddFavoritePlaceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFavoritePlaceVC.swift; sourceTree = "<group>"; };
+		004468D11FFBFFF700326650 /* AddFavoritePlaceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddFavoritePlaceVC.xib; sourceTree = "<group>"; };
+		004468D41FFC00F200326650 /* AddFavoritePlaceInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFavoritePlaceInteractor.swift; sourceTree = "<group>"; };
+		004468D61FFC013700326650 /* BaseCellInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCellInteractor.swift; sourceTree = "<group>"; };
+		004468F01FFC097A00326650 /* MainPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPhotoCell.swift; sourceTree = "<group>"; };
+		004468F11FFC097A00326650 /* MainPhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainPhotoCell.xib; sourceTree = "<group>"; };
+		004468F41FFC09F400326650 /* MainPhotoCellInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPhotoCellInteractor.swift; sourceTree = "<group>"; };
 		00CD75781FEE6220001E6F96 /* FavoritePlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FavoritePlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00CD757B1FEE6220001E6F96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00CD75821FEE6220001E6F96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -31,6 +47,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		004468C71FFBFE6200326650 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				00CD75821FEE6220001E6F96 /* Assets.xcassets */,
+				00CD757B1FEE6220001E6F96 /* AppDelegate.swift */,
+				00CD75941FEE63AA001E6F96 /* LaunchScreen.xib */,
+				004468C81FFBFEBE00326650 /* TableViewExtension.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		004468CA1FFBFF1C00326650 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				004468F11FFC097A00326650 /* MainPhotoCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		004468CB1FFBFF2000326650 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				004468D11FFBFFF700326650 /* AddFavoritePlaceVC.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		004468CC1FFBFF3D00326650 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				004468D01FFBFFF700326650 /* AddFavoritePlaceVC.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		004468CD1FFBFF8D00326650 /* Cell Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				004468D61FFC013700326650 /* BaseCellInteractor.swift */,
+				004468F41FFC09F400326650 /* MainPhotoCellInteractor.swift */,
+			);
+			path = "Cell Interactors";
+			sourceTree = "<group>";
+		};
+		004468CE1FFBFF9E00326650 /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				004468D41FFC00F200326650 /* AddFavoritePlaceInteractor.swift */,
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		004468CF1FFBFFA600326650 /* Cell ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				004468F01FFC097A00326650 /* MainPhotoCell.swift */,
+			);
+			path = "Cell ViewControllers";
+			sourceTree = "<group>";
+		};
 		00CD756F1FEE6220001E6F96 = {
 			isa = PBXGroup;
 			children = (
@@ -50,11 +126,13 @@
 		00CD757A1FEE6220001E6F96 /* FavoritePlaces */ = {
 			isa = PBXGroup;
 			children = (
-				00CD757B1FEE6220001E6F96 /* AppDelegate.swift */,
-				00CD75871FEE6220001E6F96 /* Info.plist */,
-				00CD75941FEE63AA001E6F96 /* LaunchScreen.xib */,
+				004468CC1FFBFF3D00326650 /* View Controllers */,
+				004468CF1FFBFFA600326650 /* Cell ViewControllers */,
+				004468CE1FFBFF9E00326650 /* Interactors */,
+				004468CD1FFBFF8D00326650 /* Cell Interactors */,
 				00CD758D1FEE625E001E6F96 /* Resources */,
-				00CD758E1FEE6293001E6F96 /* ViewControllers */,
+				004468C71FFBFE6200326650 /* Supporting Files */,
+				00CD75871FEE6220001E6F96 /* Info.plist */,
 			);
 			path = FavoritePlaces;
 			sourceTree = "<group>";
@@ -62,16 +140,10 @@
 		00CD758D1FEE625E001E6F96 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				00CD75821FEE6220001E6F96 /* Assets.xcassets */,
+				004468CA1FFBFF1C00326650 /* Cells */,
+				004468CB1FFBFF2000326650 /* Views */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		00CD758E1FEE6293001E6F96 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,7 +206,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				00CD75831FEE6220001E6F96 /* Assets.xcassets in Resources */,
+				004468F31FFC097A00326650 /* MainPhotoCell.xib in Resources */,
 				00CD75961FEE63AA001E6F96 /* LaunchScreen.xib in Resources */,
+				004468D31FFBFFF700326650 /* AddFavoritePlaceVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,7 +219,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				004468D51FFC00F200326650 /* AddFavoritePlaceInteractor.swift in Sources */,
 				00CD757C1FEE6220001E6F96 /* AppDelegate.swift in Sources */,
+				004468F51FFC09F400326650 /* MainPhotoCellInteractor.swift in Sources */,
+				004468D21FFBFFF700326650 /* AddFavoritePlaceVC.swift in Sources */,
+				004468F21FFC097A00326650 /* MainPhotoCell.swift in Sources */,
+				004468C91FFBFEBE00326650 /* TableViewExtension.swift in Sources */,
+				004468D71FFC013700326650 /* BaseCellInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
