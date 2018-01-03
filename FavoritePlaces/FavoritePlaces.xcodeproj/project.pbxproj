@@ -20,6 +20,9 @@
 		00CD75961FEE63AA001E6F96 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00CD75941FEE63AA001E6F96 /* LaunchScreen.xib */; };
 		00D90F2A1FFD3DE2008478EC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00D90F2C1FFD3DE2008478EC /* Localizable.strings */; };
 		00D90F2F1FFD3E5F008478EC /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D90F2E1FFD3E5F008478EC /* StringExtension.swift */; };
+		00D90F321FFD62D9008478EC /* PlaceNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D90F301FFD62D9008478EC /* PlaceNameCell.swift */; };
+		00D90F331FFD62D9008478EC /* PlaceNameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00D90F311FFD62D9008478EC /* PlaceNameCell.xib */; };
+		00D90F351FFD62F2008478EC /* PlaceNameCellInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D90F341FFD62F2008478EC /* PlaceNameCellInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +42,9 @@
 		00D90F2B1FFD3DE2008478EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		00D90F2D1FFD3DED008478EC /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		00D90F2E1FFD3E5F008478EC /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		00D90F301FFD62D9008478EC /* PlaceNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceNameCell.swift; sourceTree = "<group>"; };
+		00D90F311FFD62D9008478EC /* PlaceNameCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceNameCell.xib; sourceTree = "<group>"; };
+		00D90F341FFD62F2008478EC /* PlaceNameCellInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceNameCellInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				004468F11FFC097A00326650 /* MainPhotoCell.xib */,
+				00D90F311FFD62D9008478EC /* PlaceNameCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -94,6 +101,7 @@
 			children = (
 				004468D61FFC013700326650 /* BaseCellInteractor.swift */,
 				004468F41FFC09F400326650 /* MainPhotoCellInteractor.swift */,
+				00D90F341FFD62F2008478EC /* PlaceNameCellInteractor.swift */,
 			);
 			path = "Cell Interactors";
 			sourceTree = "<group>";
@@ -110,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				004468F01FFC097A00326650 /* MainPhotoCell.swift */,
+				00D90F301FFD62D9008478EC /* PlaceNameCell.swift */,
 			);
 			path = "Cell ViewControllers";
 			sourceTree = "<group>";
@@ -215,6 +224,7 @@
 			files = (
 				00D90F2A1FFD3DE2008478EC /* Localizable.strings in Resources */,
 				00CD75831FEE6220001E6F96 /* Assets.xcassets in Resources */,
+				00D90F331FFD62D9008478EC /* PlaceNameCell.xib in Resources */,
 				004468F31FFC097A00326650 /* MainPhotoCell.xib in Resources */,
 				00CD75961FEE63AA001E6F96 /* LaunchScreen.xib in Resources */,
 				004468D31FFBFFF700326650 /* AddFavoritePlaceVC.xib in Resources */,
@@ -231,7 +241,9 @@
 				004468D51FFC00F200326650 /* AddFavoritePlaceInteractor.swift in Sources */,
 				00CD757C1FEE6220001E6F96 /* AppDelegate.swift in Sources */,
 				004468F51FFC09F400326650 /* MainPhotoCellInteractor.swift in Sources */,
+				00D90F321FFD62D9008478EC /* PlaceNameCell.swift in Sources */,
 				004468D21FFBFFF700326650 /* AddFavoritePlaceVC.swift in Sources */,
+				00D90F351FFD62F2008478EC /* PlaceNameCellInteractor.swift in Sources */,
 				00D90F2F1FFD3E5F008478EC /* StringExtension.swift in Sources */,
 				004468F21FFC097A00326650 /* MainPhotoCell.swift in Sources */,
 				004468C91FFBFEBE00326650 /* TableViewExtension.swift in Sources */,

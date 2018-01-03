@@ -28,8 +28,8 @@ class AddFavoritePlaceInteractor: BaseTableInteractorProtocol {
     
     // The visible cells in the given order
     var cellOrder: [Cell] = [
-        .mainPhoto
-//        .placeName,
+        .mainPhoto,
+        .placeName
 //        .description,
 //        .galleryCollection,
 //        .address,
@@ -39,7 +39,8 @@ class AddFavoritePlaceInteractor: BaseTableInteractorProtocol {
     
     // Corresponding 'Cell Interactors' for each Cell enum
     var cellInteractors : [Cell:BaseCellInteractor] = [
-        .mainPhoto : MainPhotoCellInteractor()
+        .mainPhoto : MainPhotoCellInteractor(),
+        .placeName : PlaceNameCellInteractor(title: "PlaceName".localized, value: "cos" )
     ]
     
     func getCellInteractor(for index:Int) -> BaseCellInteractor? {

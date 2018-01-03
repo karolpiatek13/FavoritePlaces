@@ -16,6 +16,8 @@ class AddFavoritePlaceVC: UITableViewController {
     
     override func viewDidLoad() {
         picker.delegate = self
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 128
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -28,6 +30,7 @@ class AddFavoritePlaceVC: UITableViewController {
         }
         let cellView = tableView.getReusableCellSafe(cellType: cellInteractor.cellType)
         cellInteractor.configure(cellView)
+        cellView.selectionStyle = .none
         return cellView
     }
     
