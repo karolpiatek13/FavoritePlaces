@@ -23,6 +23,12 @@
 		00D90F321FFD62D9008478EC /* PlaceNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D90F301FFD62D9008478EC /* PlaceNameCell.swift */; };
 		00D90F331FFD62D9008478EC /* PlaceNameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00D90F311FFD62D9008478EC /* PlaceNameCell.xib */; };
 		00D90F351FFD62F2008478EC /* PlaceNameCellInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D90F341FFD62F2008478EC /* PlaceNameCellInteractor.swift */; };
+		00D90F3E1FFEBAFB008478EC /* DescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D90F3C1FFEBAFB008478EC /* DescriptionCell.swift */; };
+		00D90F3F1FFEBAFB008478EC /* DescriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00D90F3D1FFEBAFB008478EC /* DescriptionCell.xib */; };
+		00D90F411FFEBB1E008478EC /* DescriptionCellInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D90F401FFEBB1E008478EC /* DescriptionCellInteractor.swift */; };
+		00D90F441FFECEE5008478EC /* AddPlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D90F421FFECEE5008478EC /* AddPlaceCell.swift */; };
+		00D90F451FFECEE5008478EC /* AddPlaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00D90F431FFECEE5008478EC /* AddPlaceCell.xib */; };
+		00D90F471FFECEFA008478EC /* AddPlaceCellInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D90F461FFECEFA008478EC /* AddPlaceCellInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +51,12 @@
 		00D90F301FFD62D9008478EC /* PlaceNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceNameCell.swift; sourceTree = "<group>"; };
 		00D90F311FFD62D9008478EC /* PlaceNameCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceNameCell.xib; sourceTree = "<group>"; };
 		00D90F341FFD62F2008478EC /* PlaceNameCellInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceNameCellInteractor.swift; sourceTree = "<group>"; };
+		00D90F3C1FFEBAFB008478EC /* DescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionCell.swift; sourceTree = "<group>"; };
+		00D90F3D1FFEBAFB008478EC /* DescriptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionCell.xib; sourceTree = "<group>"; };
+		00D90F401FFEBB1E008478EC /* DescriptionCellInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionCellInteractor.swift; sourceTree = "<group>"; };
+		00D90F421FFECEE5008478EC /* AddPlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceCell.swift; sourceTree = "<group>"; };
+		00D90F431FFECEE5008478EC /* AddPlaceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPlaceCell.xib; sourceTree = "<group>"; };
+		00D90F461FFECEFA008478EC /* AddPlaceCellInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceCellInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +88,8 @@
 			children = (
 				004468F11FFC097A00326650 /* MainPhotoCell.xib */,
 				00D90F311FFD62D9008478EC /* PlaceNameCell.xib */,
+				00D90F3D1FFEBAFB008478EC /* DescriptionCell.xib */,
+				00D90F431FFECEE5008478EC /* AddPlaceCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -102,6 +116,8 @@
 				004468D61FFC013700326650 /* BaseCellInteractor.swift */,
 				004468F41FFC09F400326650 /* MainPhotoCellInteractor.swift */,
 				00D90F341FFD62F2008478EC /* PlaceNameCellInteractor.swift */,
+				00D90F401FFEBB1E008478EC /* DescriptionCellInteractor.swift */,
+				00D90F461FFECEFA008478EC /* AddPlaceCellInteractor.swift */,
 			);
 			path = "Cell Interactors";
 			sourceTree = "<group>";
@@ -119,6 +135,8 @@
 			children = (
 				004468F01FFC097A00326650 /* MainPhotoCell.swift */,
 				00D90F301FFD62D9008478EC /* PlaceNameCell.swift */,
+				00D90F3C1FFEBAFB008478EC /* DescriptionCell.swift */,
+				00D90F421FFECEE5008478EC /* AddPlaceCell.swift */,
 			);
 			path = "Cell ViewControllers";
 			sourceTree = "<group>";
@@ -227,7 +245,9 @@
 				00D90F331FFD62D9008478EC /* PlaceNameCell.xib in Resources */,
 				004468F31FFC097A00326650 /* MainPhotoCell.xib in Resources */,
 				00CD75961FEE63AA001E6F96 /* LaunchScreen.xib in Resources */,
+				00D90F3F1FFEBAFB008478EC /* DescriptionCell.xib in Resources */,
 				004468D31FFBFFF700326650 /* AddFavoritePlaceVC.xib in Resources */,
+				00D90F451FFECEE5008478EC /* AddPlaceCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,9 +264,13 @@
 				00D90F321FFD62D9008478EC /* PlaceNameCell.swift in Sources */,
 				004468D21FFBFFF700326650 /* AddFavoritePlaceVC.swift in Sources */,
 				00D90F351FFD62F2008478EC /* PlaceNameCellInteractor.swift in Sources */,
+				00D90F471FFECEFA008478EC /* AddPlaceCellInteractor.swift in Sources */,
 				00D90F2F1FFD3E5F008478EC /* StringExtension.swift in Sources */,
+				00D90F441FFECEE5008478EC /* AddPlaceCell.swift in Sources */,
 				004468F21FFC097A00326650 /* MainPhotoCell.swift in Sources */,
 				004468C91FFBFEBE00326650 /* TableViewExtension.swift in Sources */,
+				00D90F411FFEBB1E008478EC /* DescriptionCellInteractor.swift in Sources */,
+				00D90F3E1FFEBAFB008478EC /* DescriptionCell.swift in Sources */,
 				004468D71FFC013700326650 /* BaseCellInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

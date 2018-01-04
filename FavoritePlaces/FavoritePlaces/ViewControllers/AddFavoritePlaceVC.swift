@@ -29,6 +29,9 @@ class AddFavoritePlaceVC: UITableViewController {
             return UITableViewCell()
         }
         let cellView = tableView.getReusableCellSafe(cellType: cellInteractor.cellType)
+        if let cell = cellView as? DescriptionCell {
+            cell.textView.delegate = self
+        }
         cellInteractor.configure(cellView)
         return cellView
     }
@@ -96,5 +99,17 @@ extension AddFavoritePlaceVC: UIImagePickerControllerDelegate, UINavigationContr
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension AddFavoritePlaceVC: UITextViewDelegate {
+    
+    func textViewDidChange(_ textView: UITextView) {
+        let currentOffset = tableView.contentOffset //
+        UIView.setAnimationsEnabled(false) //
+        tableView.beginUpdates()
+        tableView.endUpdates()
+        UIView.setAnimationsEnabled(true) //
+        tableView.setContentOffset(currentOffset, animated: false) //
     }
 }

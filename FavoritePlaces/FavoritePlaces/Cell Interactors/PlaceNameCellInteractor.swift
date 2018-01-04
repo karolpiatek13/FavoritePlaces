@@ -17,7 +17,6 @@ class PlaceNameCellInteractor: BaseCellInteractor {
         self.title = title
         self.value = value
         super.init()
-        
     }
     
     override func configure(_ cell : UITableViewCell) {
