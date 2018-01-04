@@ -7,3 +7,4 @@
 */
 
 "Permissions.Alert.Title" = "Alert";
+"PlaceName.Error.Empty" = "Please fill place name.";

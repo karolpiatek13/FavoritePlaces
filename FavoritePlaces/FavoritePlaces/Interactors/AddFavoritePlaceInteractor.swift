@@ -11,7 +11,7 @@ import Foundation
 protocol BaseTableInteractorProtocol {
     func getCellInteractor(for index:Int) -> BaseCellInteractor?
     func getNumberOfVisibleCells() -> Int
-    func handleSelection(indexPath: IndexPath)
+    func getCellEnum(index: Int) -> AddFavoritePlaceInteractor.Cell
 }
 
 class AddFavoritePlaceInteractor: BaseTableInteractorProtocol {
@@ -50,17 +50,7 @@ class AddFavoritePlaceInteractor: BaseTableInteractorProtocol {
         return cellOrder.count
     }
     
-    func getCellType(for index: Int) -> Cell {
+    func getCellEnum(index: Int) -> AddFavoritePlaceInteractor.Cell{
         return cellOrder[index]
-    }
-    
-    func handleSelection(indexPath: IndexPath) {
-        switch getCellType(for: indexPath.row) {
-        case Cell.mainPhoto:
-            // call VC
-            break
-        default:
-            return
-        }
     }
 }

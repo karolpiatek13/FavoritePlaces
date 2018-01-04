@@ -34,7 +34,12 @@ class AddFavoritePlaceVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        interactor.handleSelection(indexPath: indexPath)
+        switch interactor.getCellEnum(index: indexPath.row) {
+        case .mainPhoto:
+            showAvatarChangeOptions()
+        default:
+            break
+        }
     }
     
     private func showAvatarChangeOptions() {

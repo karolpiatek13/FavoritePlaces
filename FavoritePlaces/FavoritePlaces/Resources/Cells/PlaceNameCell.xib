@@ -12,42 +12,55 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="PlaceNameCell" customModule="FavoritePlaces" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="100" id="KGk-i7-Jjw" customClass="PlaceNameCell" customModule="FavoritePlaces" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="93"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="92.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rwz-En-qgd">
-                        <rect key="frame" x="16" y="11" width="88.5" height="21"/>
+                        <rect key="frame" x="16" y="15" width="88.5" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YHJ-hY-uAy">
-                        <rect key="frame" x="112.5" y="6" width="199.5" height="30"/>
+                        <rect key="frame" x="16" y="44" width="288" height="30"/>
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                         <connections>
                             <action selector="textFieldEditingChanged:" destination="KGk-i7-Jjw" eventType="editingChanged" id="MaV-jo-vfL"/>
+                            <action selector="textFieldEditingDidEnd:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="LGR-hh-LdI"/>
                         </connections>
                     </textField>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GAa-XL-Yoe">
+                        <rect key="frame" x="258.5" y="15" width="37.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="GAa-XL-Yoe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="0kc-XB-hdo"/>
+                    <constraint firstItem="Rwz-En-qgd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="44v-Tc-V6A"/>
+                    <constraint firstItem="GAa-XL-Yoe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Rwz-En-qgd" secondAttribute="trailing" constant="4" id="5iR-BW-tLh"/>
                     <constraint firstItem="Rwz-En-qgd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="6m8-Hx-CKs"/>
-                    <constraint firstItem="Rwz-En-qgd" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Srd-xg-2K3"/>
-                    <constraint firstItem="YHJ-hY-uAy" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="f0T-iL-YpT"/>
-                    <constraint firstAttribute="trailing" secondItem="YHJ-hY-uAy" secondAttribute="trailing" constant="8" id="pRk-nX-i73"/>
-                    <constraint firstItem="YHJ-hY-uAy" firstAttribute="leading" secondItem="Rwz-En-qgd" secondAttribute="trailing" constant="8" id="vqT-ee-ggI"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="YHJ-hY-uAy" secondAttribute="trailing" id="XpB-6h-mkh"/>
+                    <constraint firstItem="YHJ-hY-uAy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="djV-Fk-SL0"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="YHJ-hY-uAy" secondAttribute="bottom" constant="8" id="frR-yE-9q6"/>
+                    <constraint firstItem="YHJ-hY-uAy" firstAttribute="top" secondItem="Rwz-En-qgd" secondAttribute="bottom" constant="8" id="heE-7J-33z"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="GAa-XL-Yoe" secondAttribute="trailing" constant="8" id="v1g-5w-Ey9"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="placeNameErrorLabel" destination="GAa-XL-Yoe" id="uyv-Wa-zNP"/>
                 <outlet property="placeNameLabel" destination="Rwz-En-qgd" id="8Im-d7-Hjq"/>
                 <outlet property="placeNameTextField" destination="YHJ-hY-uAy" id="QMs-jI-bic"/>
             </connections>
+            <point key="canvasLocation" x="34" y="82"/>
         </tableViewCell>
     </objects>
 </document>
