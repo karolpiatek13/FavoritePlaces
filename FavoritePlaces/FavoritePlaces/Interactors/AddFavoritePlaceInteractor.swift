@@ -11,11 +11,11 @@ import Foundation
 protocol BaseTableInteractorProtocol {
     func getCellInteractor(for index:Int) -> BaseCellInteractor?
     func getNumberOfVisibleCells() -> Int
+    func handleSelection(indexPath: IndexPath)
 }
 
 class AddFavoritePlaceInteractor: BaseTableInteractorProtocol {
     
-    // All cells that may appear
     enum Cell : Int {
         case mainPhoto
         case placeName
@@ -26,7 +26,6 @@ class AddFavoritePlaceInteractor: BaseTableInteractorProtocol {
         case addButton
     }
     
-    // The visible cells in the given order
     var cellOrder: [Cell] = [
         .mainPhoto,
         .placeName
@@ -49,5 +48,19 @@ class AddFavoritePlaceInteractor: BaseTableInteractorProtocol {
     
     func getNumberOfVisibleCells() -> Int {
         return cellOrder.count
+    }
+    
+    func getCellType(for index: Int) -> Cell {
+        return cellOrder[index]
+    }
+    
+    func handleSelection(indexPath: IndexPath) {
+        switch getCellType(for: indexPath.row) {
+        case Cell.mainPhoto:
+            // call VC
+            break
+        default:
+            return
+        }
     }
 }

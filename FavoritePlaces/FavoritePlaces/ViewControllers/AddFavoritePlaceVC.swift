@@ -12,7 +12,7 @@ import AVKit
 class AddFavoritePlaceVC: UITableViewController {
     
     fileprivate let picker = UIImagePickerController()
-    var interactor = AddFavoritePlaceInteractor()
+    var interactor: BaseTableInteractorProtocol = AddFavoritePlaceInteractor()
     
     override func viewDidLoad() {
         picker.delegate = self
@@ -30,14 +30,11 @@ class AddFavoritePlaceVC: UITableViewController {
         }
         let cellView = tableView.getReusableCellSafe(cellType: cellInteractor.cellType)
         cellInteractor.configure(cellView)
-        cellView.selectionStyle = .none
         return cellView
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            showAvatarChangeOptions()
-        }
+        interactor.handleSelection(indexPath: indexPath)
     }
     
     private func showAvatarChangeOptions() {
@@ -86,7 +83,7 @@ extension AddFavoritePlaceVC: UIImagePickerControllerDelegate, UINavigationContr
             picker.dismiss(animated: true, completion: nil)
             return
         }
-        let cellInteractor = interactor.getCellInteractor(for: 0) as! MainPhotoCellInteractor
+        guard let cellInteractor = interactor.getCellInteractor(for: 0) as? MainPhotoCellInteractor else { return }
         cellInteractor.mainPhoto = chosenImage
         tableView.reloadData()
         picker.dismiss(animated: true, completion: nil)
