@@ -24,6 +24,7 @@ class AddFavoritePlaceInteractor: BaseTableInteractorProtocol {
         case address
         case location
         case addButton
+        case empty
     }
     
     var cellOrder: [Cell] = [
@@ -36,7 +37,6 @@ class AddFavoritePlaceInteractor: BaseTableInteractorProtocol {
         .addButton
     ]
     
-    // Corresponding 'Cell Interactors' for each Cell enum
     var cellInteractors : [Cell:BaseCellInteractor] = [
         .mainPhoto : MainPhotoCellInteractor(),
         .placeName : PlaceNameCellInteractor(title: "PlaceName".localized, value: "cos" ),
@@ -52,7 +52,10 @@ class AddFavoritePlaceInteractor: BaseTableInteractorProtocol {
         return cellOrder.count
     }
     
-    func getCellEnum(index: Int) -> AddFavoritePlaceInteractor.Cell{
-        return cellOrder[index]
+    func getCellEnum(index: Int) -> AddFavoritePlaceInteractor.Cell {
+        if cellOrder.indices.contains(index) {
+            return cellOrder[index]
+        }
+        return Cell.empty
     }
 }
