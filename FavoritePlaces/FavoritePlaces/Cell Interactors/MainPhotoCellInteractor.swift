@@ -18,6 +18,6 @@ class MainPhotoCellInteractor: BaseCellInteractor {
     
     override func configure(_ cell : UITableViewCell) {
         guard let cell = cell as? MainPhotoCell else { return }
-        cell.configure(interactor: self, mainPhoto: mainPhoto ?? #imageLiteral(resourceName: "apple"))
+        cell.configure(interactor: self, mainPhoto: mainPhoto ?? #imageLiteral(resourceName: "photoPlaceHolder"))
     }
 }

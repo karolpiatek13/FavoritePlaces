@@ -29,6 +29,12 @@
 		00D90F441FFECEE5008478EC /* AddPlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D90F421FFECEE5008478EC /* AddPlaceCell.swift */; };
 		00D90F451FFECEE5008478EC /* AddPlaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00D90F431FFECEE5008478EC /* AddPlaceCell.xib */; };
 		00D90F471FFECEFA008478EC /* AddPlaceCellInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D90F461FFECEFA008478EC /* AddPlaceCellInteractor.swift */; };
+		00D90F4A1FFF7648008478EC /* GalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D90F481FFF7648008478EC /* GalleryCell.swift */; };
+		00D90F4B1FFF7648008478EC /* GalleryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00D90F491FFF7648008478EC /* GalleryCell.xib */; };
+		00D90F4E1FFF773A008478EC /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D90F4C1FFF773A008478EC /* PhotoCell.swift */; };
+		00D90F4F1FFF773A008478EC /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00D90F4D1FFF773A008478EC /* PhotoCell.xib */; };
+		00D90F511FFF83F4008478EC /* GalleryCellInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D90F501FFF83F4008478EC /* GalleryCellInteractor.swift */; };
+		00D90F541FFF8FC5008478EC /* UIResponderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D90F531FFF8FC5008478EC /* UIResponderExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +63,12 @@
 		00D90F421FFECEE5008478EC /* AddPlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceCell.swift; sourceTree = "<group>"; };
 		00D90F431FFECEE5008478EC /* AddPlaceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPlaceCell.xib; sourceTree = "<group>"; };
 		00D90F461FFECEFA008478EC /* AddPlaceCellInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceCellInteractor.swift; sourceTree = "<group>"; };
+		00D90F481FFF7648008478EC /* GalleryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCell.swift; sourceTree = "<group>"; };
+		00D90F491FFF7648008478EC /* GalleryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryCell.xib; sourceTree = "<group>"; };
+		00D90F4C1FFF773A008478EC /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		00D90F4D1FFF773A008478EC /* PhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
+		00D90F501FFF83F4008478EC /* GalleryCellInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCellInteractor.swift; sourceTree = "<group>"; };
+		00D90F531FFF8FC5008478EC /* UIResponderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIResponderExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,11 +85,10 @@
 		004468C71FFBFE6200326650 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				00D90F521FFF8FAD008478EC /* Extensions */,
 				00CD75821FEE6220001E6F96 /* Assets.xcassets */,
 				00CD757B1FEE6220001E6F96 /* AppDelegate.swift */,
 				00CD75941FEE63AA001E6F96 /* LaunchScreen.xib */,
-				004468C81FFBFEBE00326650 /* TableViewExtension.swift */,
-				00D90F2E1FFD3E5F008478EC /* StringExtension.swift */,
 				00D90F2C1FFD3DE2008478EC /* Localizable.strings */,
 			);
 			path = "Supporting Files";
@@ -90,6 +101,9 @@
 				00D90F311FFD62D9008478EC /* PlaceNameCell.xib */,
 				00D90F3D1FFEBAFB008478EC /* DescriptionCell.xib */,
 				00D90F431FFECEE5008478EC /* AddPlaceCell.xib */,
+				00D90F491FFF7648008478EC /* GalleryCell.xib */,
+				00D90F4C1FFF773A008478EC /* PhotoCell.swift */,
+				00D90F4D1FFF773A008478EC /* PhotoCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -117,6 +131,7 @@
 				004468F41FFC09F400326650 /* MainPhotoCellInteractor.swift */,
 				00D90F341FFD62F2008478EC /* PlaceNameCellInteractor.swift */,
 				00D90F401FFEBB1E008478EC /* DescriptionCellInteractor.swift */,
+				00D90F501FFF83F4008478EC /* GalleryCellInteractor.swift */,
 				00D90F461FFECEFA008478EC /* AddPlaceCellInteractor.swift */,
 			);
 			path = "Cell Interactors";
@@ -136,6 +151,7 @@
 				004468F01FFC097A00326650 /* MainPhotoCell.swift */,
 				00D90F301FFD62D9008478EC /* PlaceNameCell.swift */,
 				00D90F3C1FFEBAFB008478EC /* DescriptionCell.swift */,
+				00D90F481FFF7648008478EC /* GalleryCell.swift */,
 				00D90F421FFECEE5008478EC /* AddPlaceCell.swift */,
 			);
 			path = "Cell ViewControllers";
@@ -178,6 +194,16 @@
 				004468CB1FFBFF2000326650 /* Views */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		00D90F521FFF8FAD008478EC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				004468C81FFBFEBE00326650 /* TableViewExtension.swift */,
+				00D90F2E1FFD3E5F008478EC /* StringExtension.swift */,
+				00D90F531FFF8FC5008478EC /* UIResponderExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,8 +267,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				00D90F2A1FFD3DE2008478EC /* Localizable.strings in Resources */,
+				00D90F4B1FFF7648008478EC /* GalleryCell.xib in Resources */,
 				00CD75831FEE6220001E6F96 /* Assets.xcassets in Resources */,
 				00D90F331FFD62D9008478EC /* PlaceNameCell.xib in Resources */,
+				00D90F4F1FFF773A008478EC /* PhotoCell.xib in Resources */,
 				004468F31FFC097A00326650 /* MainPhotoCell.xib in Resources */,
 				00CD75961FEE63AA001E6F96 /* LaunchScreen.xib in Resources */,
 				00D90F3F1FFEBAFB008478EC /* DescriptionCell.xib in Resources */,
@@ -261,9 +289,12 @@
 				004468D51FFC00F200326650 /* AddFavoritePlaceInteractor.swift in Sources */,
 				00CD757C1FEE6220001E6F96 /* AppDelegate.swift in Sources */,
 				004468F51FFC09F400326650 /* MainPhotoCellInteractor.swift in Sources */,
+				00D90F511FFF83F4008478EC /* GalleryCellInteractor.swift in Sources */,
 				00D90F321FFD62D9008478EC /* PlaceNameCell.swift in Sources */,
+				00D90F4E1FFF773A008478EC /* PhotoCell.swift in Sources */,
 				004468D21FFBFFF700326650 /* AddFavoritePlaceVC.swift in Sources */,
 				00D90F351FFD62F2008478EC /* PlaceNameCellInteractor.swift in Sources */,
+				00D90F4A1FFF7648008478EC /* GalleryCell.swift in Sources */,
 				00D90F471FFECEFA008478EC /* AddPlaceCellInteractor.swift in Sources */,
 				00D90F2F1FFD3E5F008478EC /* StringExtension.swift in Sources */,
 				00D90F441FFECEE5008478EC /* AddPlaceCell.swift in Sources */,
@@ -271,6 +302,7 @@
 				004468C91FFBFEBE00326650 /* TableViewExtension.swift in Sources */,
 				00D90F411FFEBB1E008478EC /* DescriptionCellInteractor.swift in Sources */,
 				00D90F3E1FFEBAFB008478EC /* DescriptionCell.swift in Sources */,
+				00D90F541FFF8FC5008478EC /* UIResponderExtension.swift in Sources */,
 				004468D71FFC013700326650 /* BaseCellInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -29,57 +29,56 @@ class AddFavoritePlaceVC: UITableViewController {
             return UITableViewCell()
         }
         let cellView = tableView.getReusableCellSafe(cellType: cellInteractor.cellType)
+        cellInteractor.configure(cellView)
         if let cell = cellView as? DescriptionCell {
             cell.textView.delegate = self
         }
-        cellInteractor.configure(cellView)
+        if let interactor = cellInteractor as? GalleryCellInteractor {
+            interactor.delegate = self
+        }
         return cellView
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch interactor.getCellEnum(index: indexPath.row) {
         case .mainPhoto:
-            showAvatarChangeOptions()
+            showAvatarChangeOptions(picker: picker)
         default:
             break
         }
     }
     
-    private func showAvatarChangeOptions() {
+    func showAvatarChangeOptions(picker: UIImagePickerController) {
         let alert = UIAlertController(title: "Permissions.Alert.Title".localized, message: "Permissions.Alert.Message".localized, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Permissions.Alert.Camera", style: .default, handler: openCamera))
-        alert.addAction(UIAlertAction(title: "Permissions.Alert.PhotoLibrary", style: .default, handler: openPhotoLibrary))
+        alert.addAction(UIAlertAction(title: "Permissions.Alert.Camera", style: .default, handler: { action in
+            AVCaptureDevice.requestAccess(for: AVMediaType.video) { response in
+                if response {
+                    if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                            picker.sourceType = .camera
+                            picker.allowsEditing = false
+                            picker.cameraCaptureMode = .photo
+                            self.present(picker, animated: true, completion: nil)
+                        }
+                    }
+                } else {
+                    let failureAlertController = UIAlertController(title: "Permissions.Error.Title", message: "Permissions.Error.Message", preferredStyle: .alert)
+                    self.present(failureAlertController, animated: true)
+                }
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Permissions.Alert.PhotoLibrary", style: .default, handler: { action in
+            if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+                picker.sourceType = .photoLibrary
+                picker.allowsEditing = false
+                picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+                self.present(picker, animated: true, completion: nil)
+            }
+        }))
         alert.addAction(UIAlertAction(title: "Permissions.Alert.Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
             print("Handle Cancel Logic here")
         }))
         present(alert, animated: true)
-    }
-    
-    func openPhotoLibrary(alert: UIAlertAction) {
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            picker.sourceType = .photoLibrary
-            picker.allowsEditing = false
-            picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
-            present(picker, animated: true, completion: nil)
-        }
-    }
-    
-    func openCamera(alert: UIAlertAction) {
-        AVCaptureDevice.requestAccess(for: AVMediaType.video) { response in
-            if response {
-                if UIImagePickerController.isSourceTypeAvailable(.camera) {
-                    if UIImagePickerController.isSourceTypeAvailable(.camera) {
-                        self.picker.sourceType = .camera
-                        self.picker.allowsEditing = false
-                        self.picker.cameraCaptureMode = .photo
-                        self.present(self.picker, animated: true, completion: nil)
-                    }
-                }
-            } else {
-                let failureAlertController = UIAlertController(title: "Permissions.Error.Title", message: "Permissions.Error.Message", preferredStyle: .alert)
-                self.present(failureAlertController, animated: true)
-            }
-        }
     }
 }
 
@@ -105,11 +104,11 @@ extension AddFavoritePlaceVC: UIImagePickerControllerDelegate, UINavigationContr
 extension AddFavoritePlaceVC: UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
-        let currentOffset = tableView.contentOffset //
-        UIView.setAnimationsEnabled(false) //
+        let currentOffset = tableView.contentOffset
+        UIView.setAnimationsEnabled(false)
         tableView.beginUpdates()
         tableView.endUpdates()
-        UIView.setAnimationsEnabled(true) //
-        tableView.setContentOffset(currentOffset, animated: false) //
+        UIView.setAnimationsEnabled(true)
+        tableView.setContentOffset(currentOffset, animated: false)
     }
 }

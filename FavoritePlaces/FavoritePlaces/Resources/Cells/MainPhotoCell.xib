@@ -18,8 +18,12 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="127.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apple" translatesAutoresizingMaskIntoConstraints="NO" id="RtN-f8-8HV">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photoPlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="RtN-f8-8HV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="127.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="127.5" id="BEi-oh-qRV"/>
+                            <constraint firstAttribute="width" constant="320" id="Mrk-nq-nMp"/>
+                        </constraints>
                     </imageView>
                 </subviews>
                 <constraints>
@@ -36,6 +40,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="apple" width="128" height="128"/>
+        <image name="photoPlaceHolder" width="600" height="920"/>
     </resources>
 </document>
