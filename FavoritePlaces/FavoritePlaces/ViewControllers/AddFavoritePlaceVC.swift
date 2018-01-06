@@ -18,6 +18,7 @@ class AddFavoritePlaceVC: UITableViewController {
         picker.delegate = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 128
+        self.hideKeyboardWhenTappedAround() 
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -49,8 +50,8 @@ class AddFavoritePlaceVC: UITableViewController {
     }
     
     func showAvatarChangeOptions(picker: UIImagePickerController) {
-        let alert = UIAlertController(title: "Permissions.Alert.Title".localized, message: "Permissions.Alert.Message".localized, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Permissions.Alert.Camera", style: .default, handler: { action in
+        let alert = UIAlertController(title: "Permissions.Alert.Title".localized, message: "", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Permissions.Alert.Camera".localized, style: .default, handler: { action in
             AVCaptureDevice.requestAccess(for: AVMediaType.video) { response in
                 if response {
                     if UIImagePickerController.isSourceTypeAvailable(.camera) {
@@ -62,12 +63,12 @@ class AddFavoritePlaceVC: UITableViewController {
                         }
                     }
                 } else {
-                    let failureAlertController = UIAlertController(title: "Permissions.Error.Title", message: "Permissions.Error.Message", preferredStyle: .alert)
+                    let failureAlertController = UIAlertController(title: "Permissions.Error.Title".localized, message: "Permissions.Error.Message".localized, preferredStyle: .alert)
                     self.present(failureAlertController, animated: true)
                 }
             }
         }))
-        alert.addAction(UIAlertAction(title: "Permissions.Alert.PhotoLibrary", style: .default, handler: { action in
+        alert.addAction(UIAlertAction(title: "Permissions.Alert.PhotoLibrary".localized, style: .default, handler: { action in
             if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
                 picker.sourceType = .photoLibrary
                 picker.allowsEditing = false
@@ -75,7 +76,7 @@ class AddFavoritePlaceVC: UITableViewController {
                 self.present(picker, animated: true, completion: nil)
             }
         }))
-        alert.addAction(UIAlertAction(title: "Permissions.Alert.Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+        alert.addAction(UIAlertAction(title: "Permissions.Alert.Cancel".localized, style: .cancel, handler: { (action: UIAlertAction!) in
             print("Handle Cancel Logic here")
         }))
         present(alert, animated: true)

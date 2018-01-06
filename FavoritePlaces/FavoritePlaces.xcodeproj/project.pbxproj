@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0031988D1FFFD43F00E17D89 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0031988C1FFFD43F00E17D89 /* UIViewControllerExtension.swift */; };
 		004468C91FFBFEBE00326650 /* TableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004468C81FFBFEBE00326650 /* TableViewExtension.swift */; };
 		004468D21FFBFFF700326650 /* AddFavoritePlaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004468D01FFBFFF700326650 /* AddFavoritePlaceVC.swift */; };
 		004468D31FFBFFF700326650 /* AddFavoritePlaceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004468D11FFBFFF700326650 /* AddFavoritePlaceVC.xib */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0031988C1FFFD43F00E17D89 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		004468C81FFBFEBE00326650 /* TableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExtension.swift; sourceTree = "<group>"; };
 		004468D01FFBFFF700326650 /* AddFavoritePlaceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFavoritePlaceVC.swift; sourceTree = "<group>"; };
 		004468D11FFBFFF700326650 /* AddFavoritePlaceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddFavoritePlaceVC.xib; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				004468C81FFBFEBE00326650 /* TableViewExtension.swift */,
 				00D90F2E1FFD3E5F008478EC /* StringExtension.swift */,
 				00D90F531FFF8FC5008478EC /* UIResponderExtension.swift */,
+				0031988C1FFFD43F00E17D89 /* UIViewControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				004468C91FFBFEBE00326650 /* TableViewExtension.swift in Sources */,
 				00D90F411FFEBB1E008478EC /* DescriptionCellInteractor.swift in Sources */,
 				00D90F3E1FFEBAFB008478EC /* DescriptionCell.swift in Sources */,
+				0031988D1FFFD43F00E17D89 /* UIViewControllerExtension.swift in Sources */,
 				00D90F541FFF8FC5008478EC /* UIResponderExtension.swift in Sources */,
 				004468D71FFC013700326650 /* BaseCellInteractor.swift in Sources */,
 			);

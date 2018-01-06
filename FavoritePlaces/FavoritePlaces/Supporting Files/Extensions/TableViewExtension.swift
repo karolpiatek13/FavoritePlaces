@@ -6,8 +6,6 @@
 //  Copyright © 2018 KarolPiatek. All rights reserved.
 //
 
-import Foundation
-
 import UIKit
 
 extension UITableView {

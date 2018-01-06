@@ -6,5 +6,8 @@
   Copyright © 2018 KarolPiatek. All rights reserved.
 */
 
-"Permissions.Alert.Title" = "Alert";
+"Permissions.Alert.Title" = "Add Photo";
 "PlaceName.Error.Empty" = "Please fill place name.";
+"Permissions.Alert.Camera" = "Camera";
+"Permissions.Alert.PhotoLibrary" = "Photo Library";
+"Permissions.Alert.Cancel" = "Cancel";
