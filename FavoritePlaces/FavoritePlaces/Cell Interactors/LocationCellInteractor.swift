@@ -12,6 +12,7 @@ class LocationCellInteractor: BaseCellInteractor {
     
     override func configure(_ cell : UITableViewCell) {
         guard let cell = cell as? LocationCell else { return }
+        cell.configure(interactor: self)
     }
     
     override var cellType: AnyClass {
