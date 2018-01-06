@@ -20,8 +20,20 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>This app requires acces to your camera to save your broadcast.</string>
+	<key>NSMainStoryboardFile</key>
+	<string>Main</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>This app requires access to your photo library to save your broadcast.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Changing avatar photo, changing device photo</string>
+	<key>NSPhotoLibraryUsageDescription - 2</key>
+	<string>This app requires access to your photo library to save your broadcast.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

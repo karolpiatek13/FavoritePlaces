@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  FavoritePlaces
+
+  Created by Karol on 03.01.2018.
+  Copyright © 2018 KarolPiatek. All rights reserved.
+*/
+
+"Permissions.Alert.Title" = "Dodaj zdjęcie";
+"PlaceName.Error.Empty" = "Proszę podać nazwę miejsca";
+"Permissions.Alert.Camera" = "Kamera";
+"Permissions.Alert.PhotoLibrary" = "Biblioteka zdjęć";
+"Permissions.Alert.Cancel" = "Anuluj";
