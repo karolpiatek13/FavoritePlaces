@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0031988D1FFFD43F00E17D89 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0031988C1FFFD43F00E17D89 /* UIViewControllerExtension.swift */; };
-		004468C91FFBFEBE00326650 /* TableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004468C81FFBFEBE00326650 /* TableViewExtension.swift */; };
+		004468C91FFBFEBE00326650 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004468C81FFBFEBE00326650 /* UITableViewExtension.swift */; };
 		004468D21FFBFFF700326650 /* AddFavoritePlaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004468D01FFBFFF700326650 /* AddFavoritePlaceVC.swift */; };
 		004468D31FFBFFF700326650 /* AddFavoritePlaceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004468D11FFBFFF700326650 /* AddFavoritePlaceVC.xib */; };
 		004468D51FFC00F200326650 /* AddFavoritePlaceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004468D41FFC00F200326650 /* AddFavoritePlaceInteractor.swift */; };
@@ -36,12 +36,13 @@
 		00D90F4F1FFF773A008478EC /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00D90F4D1FFF773A008478EC /* PhotoCell.xib */; };
 		00D90F511FFF83F4008478EC /* GalleryCellInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D90F501FFF83F4008478EC /* GalleryCellInteractor.swift */; };
 		00D90F541FFF8FC5008478EC /* UIResponderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D90F531FFF8FC5008478EC /* UIResponderExtension.swift */; };
-		00F56E992000CF8C0011C630 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F56E982000CF8B0011C630 /* UIViewExtension.swift */; };
+		00F56E962000CC060011C630 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F56E942000CC060011C630 /* LocationCell.swift */; };
+		00F56E972000CC060011C630 /* LocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00F56E952000CC060011C630 /* LocationCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0031988C1FFFD43F00E17D89 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
-		004468C81FFBFEBE00326650 /* TableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExtension.swift; sourceTree = "<group>"; };
+		004468C81FFBFEBE00326650 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		004468D01FFBFFF700326650 /* AddFavoritePlaceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFavoritePlaceVC.swift; sourceTree = "<group>"; };
 		004468D11FFBFFF700326650 /* AddFavoritePlaceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddFavoritePlaceVC.xib; sourceTree = "<group>"; };
 		004468D41FFC00F200326650 /* AddFavoritePlaceInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFavoritePlaceInteractor.swift; sourceTree = "<group>"; };
@@ -72,7 +73,8 @@
 		00D90F4D1FFF773A008478EC /* PhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
 		00D90F501FFF83F4008478EC /* GalleryCellInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCellInteractor.swift; sourceTree = "<group>"; };
 		00D90F531FFF8FC5008478EC /* UIResponderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIResponderExtension.swift; sourceTree = "<group>"; };
-		00F56E982000CF8B0011C630 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		00F56E942000CC060011C630 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
+		00F56E952000CC060011C630 /* LocationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,8 +108,8 @@
 				00D90F3D1FFEBAFB008478EC /* DescriptionCell.xib */,
 				00D90F431FFECEE5008478EC /* AddPlaceCell.xib */,
 				00D90F491FFF7648008478EC /* GalleryCell.xib */,
-				00D90F4C1FFF773A008478EC /* PhotoCell.swift */,
 				00D90F4D1FFF773A008478EC /* PhotoCell.xib */,
+				00F56E952000CC060011C630 /* LocationCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -156,7 +158,9 @@
 				00D90F301FFD62D9008478EC /* PlaceNameCell.swift */,
 				00D90F3C1FFEBAFB008478EC /* DescriptionCell.swift */,
 				00D90F481FFF7648008478EC /* GalleryCell.swift */,
+				00F56E942000CC060011C630 /* LocationCell.swift */,
 				00D90F421FFECEE5008478EC /* AddPlaceCell.swift */,
+				00D90F4C1FFF773A008478EC /* PhotoCell.swift */,
 			);
 			path = "Cell ViewControllers";
 			sourceTree = "<group>";
@@ -203,11 +207,10 @@
 		00D90F521FFF8FAD008478EC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				004468C81FFBFEBE00326650 /* TableViewExtension.swift */,
+				004468C81FFBFEBE00326650 /* UITableViewExtension.swift */,
 				00D90F2E1FFD3E5F008478EC /* StringExtension.swift */,
 				00D90F531FFF8FC5008478EC /* UIResponderExtension.swift */,
 				0031988C1FFFD43F00E17D89 /* UIViewControllerExtension.swift */,
-				00F56E982000CF8B0011C630 /* UIViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00D90F2A1FFD3DE2008478EC /* Localizable.strings in Resources */,
+				00F56E972000CC060011C630 /* LocationCell.xib in Resources */,
 				00D90F4B1FFF7648008478EC /* GalleryCell.xib in Resources */,
 				00CD75831FEE6220001E6F96 /* Assets.xcassets in Resources */,
 				00D90F331FFD62D9008478EC /* PlaceNameCell.xib in Resources */,
@@ -298,6 +302,7 @@
 				00D90F511FFF83F4008478EC /* GalleryCellInteractor.swift in Sources */,
 				00D90F321FFD62D9008478EC /* PlaceNameCell.swift in Sources */,
 				00D90F4E1FFF773A008478EC /* PhotoCell.swift in Sources */,
+				00F56E962000CC060011C630 /* LocationCell.swift in Sources */,
 				004468D21FFBFFF700326650 /* AddFavoritePlaceVC.swift in Sources */,
 				00D90F351FFD62F2008478EC /* PlaceNameCellInteractor.swift in Sources */,
 				00D90F4A1FFF7648008478EC /* GalleryCell.swift in Sources */,
@@ -305,11 +310,10 @@
 				00D90F2F1FFD3E5F008478EC /* StringExtension.swift in Sources */,
 				00D90F441FFECEE5008478EC /* AddPlaceCell.swift in Sources */,
 				004468F21FFC097A00326650 /* MainPhotoCell.swift in Sources */,
-				004468C91FFBFEBE00326650 /* TableViewExtension.swift in Sources */,
+				004468C91FFBFEBE00326650 /* UITableViewExtension.swift in Sources */,
 				00D90F411FFEBB1E008478EC /* DescriptionCellInteractor.swift in Sources */,
 				00D90F3E1FFEBAFB008478EC /* DescriptionCell.swift in Sources */,
 				0031988D1FFFD43F00E17D89 /* UIViewControllerExtension.swift in Sources */,
-				00F56E992000CF8C0011C630 /* UIViewExtension.swift in Sources */,
 				00D90F541FFF8FC5008478EC /* UIResponderExtension.swift in Sources */,
 				004468D71FFC013700326650 /* BaseCellInteractor.swift in Sources */,
 			);

@@ -18,22 +18,23 @@ class PlaceNameCell: UITableViewCell {
 
     @IBAction func textFieldEditingChanged(_ sender: UITextField) {
         interactor?.value = sender.text ?? ""
-        placeNameTextField.fadeTransition(0.4)
-        placeNameLabel.fadeTransition(0.4)
-        placeNameTextField.layer.borderColor = UIColor.clear.cgColor
-        placeNameErrorLabel.isHidden = true
+        UIView.animate(withDuration: 0.5, delay: 0.0, options: .transitionCrossDissolve, animations: {
+            self.placeNameTextField.layer.borderColor = UIColor.clear.cgColor
+            self.placeNameErrorLabel.alpha = 0
+        })
     }
     
     @IBAction func textFieldEditingDidEnd(_ sender: UITextField) {
         if placeNameTextField.text?.isEmpty ?? true {
-            placeNameTextField.fadeTransition(0.4)
-            placeNameLabel.fadeTransition(0.4)
-            placeNameErrorLabel.text = "PlaceName.Error.Empty".localized
-            placeNameErrorLabel.isHidden = false
-            placeNameTextField.layer.borderColor = UIColor.red.cgColor
-            placeNameTextField.layer.cornerRadius = 8.0
-            placeNameTextField.layer.masksToBounds = true
-            placeNameTextField.layer.borderWidth = 1.0
+            UIView.animate(withDuration: 0.5, delay: 0.0, options: .transitionCrossDissolve, animations: {
+                self.placeNameErrorLabel.text = "PlaceName.Error.Empty".localized
+                self.placeNameErrorLabel.isHidden = false
+                self.placeNameTextField.layer.borderColor = UIColor.red.cgColor
+                self.placeNameTextField.layer.cornerRadius = 8.0
+                self.placeNameTextField.layer.masksToBounds = true
+                self.placeNameTextField.layer.borderWidth = 1.0
+                self.placeNameErrorLabel.alpha = 1
+            })
         }
     }
     

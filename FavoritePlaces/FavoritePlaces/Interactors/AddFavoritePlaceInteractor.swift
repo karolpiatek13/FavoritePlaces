@@ -16,12 +16,11 @@ protocol BaseTableInteractorProtocol {
 
 class AddFavoritePlaceInteractor: BaseTableInteractorProtocol {
     
-    enum Cell : Int {
+    enum Cell {
         case mainPhoto
         case placeName
         case description
         case galleryCollection
-        case address
         case location
         case addButton
         case empty
@@ -32,7 +31,6 @@ class AddFavoritePlaceInteractor: BaseTableInteractorProtocol {
         .placeName,
         .description,
         .galleryCollection,
-//        .address,
 //        .location,
         .addButton
     ]

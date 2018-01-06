@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DescriptionCell: UITableViewCell, UITextViewDelegate {
+class DescriptionCell: UITableViewCell {
 
     @IBOutlet weak var descriptionTitleLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
@@ -19,6 +19,5 @@ class DescriptionCell: UITableViewCell, UITextViewDelegate {
     func configure(interactor: DescriptionCellInteractor, title: String) {
         self.interactor = interactor
         descriptionTitleLabel.text = title
-        textView.delegate = self
     }
 }
