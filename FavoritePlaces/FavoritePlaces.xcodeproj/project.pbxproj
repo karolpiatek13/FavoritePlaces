@@ -38,6 +38,7 @@
 		00D90F541FFF8FC5008478EC /* UIResponderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D90F531FFF8FC5008478EC /* UIResponderExtension.swift */; };
 		00F56E962000CC060011C630 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F56E942000CC060011C630 /* LocationCell.swift */; };
 		00F56E972000CC060011C630 /* LocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00F56E952000CC060011C630 /* LocationCell.xib */; };
+		00F56E9B2000ECA50011C630 /* LocationCellInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F56E9A2000ECA50011C630 /* LocationCellInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		00D90F531FFF8FC5008478EC /* UIResponderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIResponderExtension.swift; sourceTree = "<group>"; };
 		00F56E942000CC060011C630 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		00F56E952000CC060011C630 /* LocationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationCell.xib; sourceTree = "<group>"; };
+		00F56E9A2000ECA50011C630 /* LocationCellInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCellInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				00D90F341FFD62F2008478EC /* PlaceNameCellInteractor.swift */,
 				00D90F401FFEBB1E008478EC /* DescriptionCellInteractor.swift */,
 				00D90F501FFF83F4008478EC /* GalleryCellInteractor.swift */,
+				00F56E9A2000ECA50011C630 /* LocationCellInteractor.swift */,
 				00D90F461FFECEFA008478EC /* AddPlaceCellInteractor.swift */,
 			);
 			path = "Cell Interactors";
@@ -309,6 +312,7 @@
 				00D90F471FFECEFA008478EC /* AddPlaceCellInteractor.swift in Sources */,
 				00D90F2F1FFD3E5F008478EC /* StringExtension.swift in Sources */,
 				00D90F441FFECEE5008478EC /* AddPlaceCell.swift in Sources */,
+				00F56E9B2000ECA50011C630 /* LocationCellInteractor.swift in Sources */,
 				004468F21FFC097A00326650 /* MainPhotoCell.swift in Sources */,
 				004468C91FFBFEBE00326650 /* UITableViewExtension.swift in Sources */,
 				00D90F411FFEBB1E008478EC /* DescriptionCellInteractor.swift in Sources */,

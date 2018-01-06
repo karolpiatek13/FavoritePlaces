@@ -31,7 +31,7 @@ class AddFavoritePlaceInteractor: BaseTableInteractorProtocol {
         .placeName,
         .description,
         .galleryCollection,
-//        .location,
+        .location,
         .addButton
     ]
     
@@ -40,6 +40,7 @@ class AddFavoritePlaceInteractor: BaseTableInteractorProtocol {
         .placeName : PlaceNameCellInteractor(title: "PlaceName".localized, value: "cos" ),
         .description : DescriptionCellInteractor(title: "Description".localized),
         .galleryCollection : GalleryCellInteractor(),
+        .location : LocationCellInteractor(),
         .addButton : AddPlaceCellInteractor(buttonTitle: "AddPlaceButton.Title".localized)
     ]
     
