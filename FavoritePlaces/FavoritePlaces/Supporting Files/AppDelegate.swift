@@ -14,11 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        window = UIWindow()
-        let navigationController = UINavigationController()
-        window?.rootViewController = navigationController
-        navigationController.setViewControllers([AddFavoritePlaceVC()], animated: true)
-        window?.makeKeyAndVisible()
         return true
     }
 }

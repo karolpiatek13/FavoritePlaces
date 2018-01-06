@@ -10,7 +10,6 @@
 		0031988D1FFFD43F00E17D89 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0031988C1FFFD43F00E17D89 /* UIViewControllerExtension.swift */; };
 		004468C91FFBFEBE00326650 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004468C81FFBFEBE00326650 /* UITableViewExtension.swift */; };
 		004468D21FFBFFF700326650 /* AddFavoritePlaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004468D01FFBFFF700326650 /* AddFavoritePlaceVC.swift */; };
-		004468D31FFBFFF700326650 /* AddFavoritePlaceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004468D11FFBFFF700326650 /* AddFavoritePlaceVC.xib */; };
 		004468D51FFC00F200326650 /* AddFavoritePlaceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004468D41FFC00F200326650 /* AddFavoritePlaceInteractor.swift */; };
 		004468D71FFC013700326650 /* BaseCellInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004468D61FFC013700326650 /* BaseCellInteractor.swift */; };
 		004468F21FFC097A00326650 /* MainPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004468F01FFC097A00326650 /* MainPhotoCell.swift */; };
@@ -18,7 +17,6 @@
 		004468F51FFC09F400326650 /* MainPhotoCellInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004468F41FFC09F400326650 /* MainPhotoCellInteractor.swift */; };
 		00CD757C1FEE6220001E6F96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CD757B1FEE6220001E6F96 /* AppDelegate.swift */; };
 		00CD75831FEE6220001E6F96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00CD75821FEE6220001E6F96 /* Assets.xcassets */; };
-		00CD75961FEE63AA001E6F96 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00CD75941FEE63AA001E6F96 /* LaunchScreen.xib */; };
 		00D90F2A1FFD3DE2008478EC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00D90F2C1FFD3DE2008478EC /* Localizable.strings */; };
 		00D90F2F1FFD3E5F008478EC /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D90F2E1FFD3E5F008478EC /* StringExtension.swift */; };
 		00D90F321FFD62D9008478EC /* PlaceNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D90F301FFD62D9008478EC /* PlaceNameCell.swift */; };
@@ -39,13 +37,14 @@
 		00F56E962000CC060011C630 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F56E942000CC060011C630 /* LocationCell.swift */; };
 		00F56E972000CC060011C630 /* LocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00F56E952000CC060011C630 /* LocationCell.xib */; };
 		00F56E9B2000ECA50011C630 /* LocationCellInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F56E9A2000ECA50011C630 /* LocationCellInteractor.swift */; };
+		00F56EBB2000FC060011C630 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00F56EBA2000FC060011C630 /* Main.storyboard */; };
+		00F56EBD2000FDD60011C630 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00F56EBC2000FDD60011C630 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0031988C1FFFD43F00E17D89 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		004468C81FFBFEBE00326650 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		004468D01FFBFFF700326650 /* AddFavoritePlaceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFavoritePlaceVC.swift; sourceTree = "<group>"; };
-		004468D11FFBFFF700326650 /* AddFavoritePlaceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddFavoritePlaceVC.xib; sourceTree = "<group>"; };
 		004468D41FFC00F200326650 /* AddFavoritePlaceInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFavoritePlaceInteractor.swift; sourceTree = "<group>"; };
 		004468D61FFC013700326650 /* BaseCellInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCellInteractor.swift; sourceTree = "<group>"; };
 		004468F01FFC097A00326650 /* MainPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPhotoCell.swift; sourceTree = "<group>"; };
@@ -55,7 +54,6 @@
 		00CD757B1FEE6220001E6F96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00CD75821FEE6220001E6F96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00CD75871FEE6220001E6F96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00CD75941FEE63AA001E6F96 /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		00D90F2B1FFD3DE2008478EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		00D90F2D1FFD3DED008478EC /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		00D90F2E1FFD3E5F008478EC /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -77,6 +75,8 @@
 		00F56E942000CC060011C630 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		00F56E952000CC060011C630 /* LocationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationCell.xib; sourceTree = "<group>"; };
 		00F56E9A2000ECA50011C630 /* LocationCellInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCellInteractor.swift; sourceTree = "<group>"; };
+		00F56EBA2000FC060011C630 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		00F56EBC2000FDD60011C630 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +96,8 @@
 				00D90F521FFF8FAD008478EC /* Extensions */,
 				00CD75821FEE6220001E6F96 /* Assets.xcassets */,
 				00CD757B1FEE6220001E6F96 /* AppDelegate.swift */,
-				00CD75941FEE63AA001E6F96 /* LaunchScreen.xib */,
 				00D90F2C1FFD3DE2008478EC /* Localizable.strings */,
+				00F56EBC2000FDD60011C630 /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -114,14 +114,6 @@
 				00F56E952000CC060011C630 /* LocationCell.xib */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		004468CB1FFBFF2000326650 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				004468D11FFBFFF700326650 /* AddFavoritePlaceVC.xib */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		004468CC1FFBFF3D00326650 /* ViewControllers */ = {
@@ -202,7 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				004468CA1FFBFF1C00326650 /* Cells */,
-				004468CB1FFBFF2000326650 /* Views */,
+				00F56EBA2000FC060011C630 /* Main.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -281,13 +273,13 @@
 				00D90F2A1FFD3DE2008478EC /* Localizable.strings in Resources */,
 				00F56E972000CC060011C630 /* LocationCell.xib in Resources */,
 				00D90F4B1FFF7648008478EC /* GalleryCell.xib in Resources */,
+				00F56EBB2000FC060011C630 /* Main.storyboard in Resources */,
 				00CD75831FEE6220001E6F96 /* Assets.xcassets in Resources */,
 				00D90F331FFD62D9008478EC /* PlaceNameCell.xib in Resources */,
 				00D90F4F1FFF773A008478EC /* PhotoCell.xib in Resources */,
 				004468F31FFC097A00326650 /* MainPhotoCell.xib in Resources */,
-				00CD75961FEE63AA001E6F96 /* LaunchScreen.xib in Resources */,
 				00D90F3F1FFEBAFB008478EC /* DescriptionCell.xib in Resources */,
-				004468D31FFBFFF700326650 /* AddFavoritePlaceVC.xib in Resources */,
+				00F56EBD2000FDD60011C630 /* LaunchScreen.storyboard in Resources */,
 				00D90F451FFECEE5008478EC /* AddPlaceCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
