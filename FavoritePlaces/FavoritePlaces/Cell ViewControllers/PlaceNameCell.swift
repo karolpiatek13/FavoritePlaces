@@ -18,12 +18,16 @@ class PlaceNameCell: UITableViewCell {
 
     @IBAction func textFieldEditingChanged(_ sender: UITextField) {
         interactor?.value = sender.text ?? ""
+        placeNameTextField.fadeTransition(0.4)
+        placeNameLabel.fadeTransition(0.4)
         placeNameTextField.layer.borderColor = UIColor.clear.cgColor
         placeNameErrorLabel.isHidden = true
     }
     
     @IBAction func textFieldEditingDidEnd(_ sender: UITextField) {
         if placeNameTextField.text?.isEmpty ?? true {
+            placeNameTextField.fadeTransition(0.4)
+            placeNameLabel.fadeTransition(0.4)
             placeNameErrorLabel.text = "PlaceName.Error.Empty".localized
             placeNameErrorLabel.isHidden = false
             placeNameTextField.layer.borderColor = UIColor.red.cgColor

@@ -36,6 +36,7 @@
 		00D90F4F1FFF773A008478EC /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00D90F4D1FFF773A008478EC /* PhotoCell.xib */; };
 		00D90F511FFF83F4008478EC /* GalleryCellInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D90F501FFF83F4008478EC /* GalleryCellInteractor.swift */; };
 		00D90F541FFF8FC5008478EC /* UIResponderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D90F531FFF8FC5008478EC /* UIResponderExtension.swift */; };
+		00F56E992000CF8C0011C630 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F56E982000CF8B0011C630 /* UIViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		00D90F4D1FFF773A008478EC /* PhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
 		00D90F501FFF83F4008478EC /* GalleryCellInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCellInteractor.swift; sourceTree = "<group>"; };
 		00D90F531FFF8FC5008478EC /* UIResponderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIResponderExtension.swift; sourceTree = "<group>"; };
+		00F56E982000CF8B0011C630 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 				00D90F2E1FFD3E5F008478EC /* StringExtension.swift */,
 				00D90F531FFF8FC5008478EC /* UIResponderExtension.swift */,
 				0031988C1FFFD43F00E17D89 /* UIViewControllerExtension.swift */,
+				00F56E982000CF8B0011C630 /* UIViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				00D90F411FFEBB1E008478EC /* DescriptionCellInteractor.swift in Sources */,
 				00D90F3E1FFEBAFB008478EC /* DescriptionCell.swift in Sources */,
 				0031988D1FFFD43F00E17D89 /* UIViewControllerExtension.swift in Sources */,
+				00F56E992000CF8C0011C630 /* UIViewExtension.swift in Sources */,
 				00D90F541FFF8FC5008478EC /* UIResponderExtension.swift in Sources */,
 				004468D71FFC013700326650 /* BaseCellInteractor.swift in Sources */,
 			);
