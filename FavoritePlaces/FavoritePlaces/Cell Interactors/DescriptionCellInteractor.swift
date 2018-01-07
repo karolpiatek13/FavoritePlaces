@@ -11,6 +11,7 @@ import UIKit
 class DescriptionCellInteractor: BaseCellInteractor {
     
     var title: String
+    var value: String?
     
     init(title: String) {
         self.title = title

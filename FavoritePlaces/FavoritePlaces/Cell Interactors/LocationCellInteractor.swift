@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import MapKit
 
 class LocationCellInteractor: BaseCellInteractor {
+    
+    var coordinate: CLLocationCoordinate2D?
     
     override func configure(_ cell : UITableViewCell) {
         guard let cell = cell as? LocationCell else { return }

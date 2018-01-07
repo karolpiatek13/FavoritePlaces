@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search for place" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Zg-2a-Xad">
-                                <rect key="frame" x="32" y="72" width="311" height="30"/>
+                                <rect key="frame" x="16" y="72" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -32,8 +32,8 @@
                         <constraints>
                             <constraint firstItem="bSE-oS-Cso" firstAttribute="top" secondItem="1Zg-2a-Xad" secondAttribute="bottom" constant="8" id="3kv-uz-rZB"/>
                             <constraint firstItem="1Zg-2a-Xad" firstAttribute="top" secondItem="i2N-3t-3nS" secondAttribute="top" constant="8" id="8GB-EB-cco"/>
-                            <constraint firstItem="1Zg-2a-Xad" firstAttribute="leading" secondItem="i2N-3t-3nS" secondAttribute="leading" constant="32" id="WLE-RX-zXa"/>
-                            <constraint firstItem="i2N-3t-3nS" firstAttribute="trailing" secondItem="1Zg-2a-Xad" secondAttribute="trailing" constant="32" id="Yd7-5m-cPP"/>
+                            <constraint firstItem="1Zg-2a-Xad" firstAttribute="leading" secondItem="i2N-3t-3nS" secondAttribute="leading" constant="16" id="WLE-RX-zXa"/>
+                            <constraint firstItem="i2N-3t-3nS" firstAttribute="trailing" secondItem="1Zg-2a-Xad" secondAttribute="trailing" constant="16" id="Yd7-5m-cPP"/>
                             <constraint firstItem="bSE-oS-Cso" firstAttribute="leading" secondItem="i2N-3t-3nS" secondAttribute="leading" id="dQb-QO-Tgc"/>
                             <constraint firstItem="i2N-3t-3nS" firstAttribute="bottom" secondItem="bSE-oS-Cso" secondAttribute="bottom" id="dWg-dM-tUu"/>
                             <constraint firstItem="i2N-3t-3nS" firstAttribute="trailing" secondItem="bSE-oS-Cso" secondAttribute="trailing" id="hb5-ZH-DzR"/>

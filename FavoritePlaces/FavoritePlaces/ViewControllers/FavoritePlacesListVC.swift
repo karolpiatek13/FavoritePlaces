@@ -21,6 +21,12 @@ class FavoritePlacesListVC: UIViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 90
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        interactor.getData()
+        tableView.reloadData()
+        super.viewWillAppear(animated)
+    }
 }
 
 extension FavoritePlacesListVC: UITableViewDataSource {

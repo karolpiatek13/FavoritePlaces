@@ -10,9 +10,15 @@ import UIKit
 
 class PlaceCellInteractor: BaseCellInteractor {
     
+    var place: FavoritePlace
+    
+    init(place: FavoritePlace) {
+        self.place = place
+    }
+    
     override func configure(_ cell : UITableViewCell) {
         guard let cell = cell as? PlaceCell else { return }
-        cell.configure(interactor: self)
+        cell.configure(interactor: self, place: place)
     }
     
     override var cellType: AnyClass {

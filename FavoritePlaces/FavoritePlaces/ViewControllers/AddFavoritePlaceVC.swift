@@ -28,7 +28,8 @@ class AddFavoritePlaceVC: UITableViewController {
     }
     
     @IBAction func saveTapped(_ sender: Any) {
-        
+        interactor.save()
+        navigationController?.dismiss(animated: true, completion: nil)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -101,7 +102,7 @@ extension AddFavoritePlaceVC: UIImagePickerControllerDelegate, UINavigationContr
             picker.dismiss(animated: true, completion: nil)
             return
         }
-        guard let cellInteractor = interactor.getCellInteractor(for: 0) as? MainPhotoCellInteractor else { return }
+        guard let cellInteractor = interactor.getCellInteractor(for: AddFavoritePlaceInteractor.Cell.mainPhoto.rawValue) as? MainPhotoCellInteractor else { return }
         cellInteractor.mainPhoto = chosenImage
         tableView.reloadData()
         picker.dismiss(animated: true, completion: nil)
@@ -121,5 +122,7 @@ extension AddFavoritePlaceVC: UITextViewDelegate {
         tableView.endUpdates()
         UIView.setAnimationsEnabled(true)
         tableView.setContentOffset(currentOffset, animated: false)
+        guard let cellInteractor = interactor.getCellInteractor(for: AddFavoritePlaceInteractor.Cell.description.rawValue) as? DescriptionCellInteractor else { return }
+        cellInteractor.value = textView.text
     }
 }

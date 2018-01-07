@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="378" height="116.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v4m-4g-MEP">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photoPlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="v4m-4g-MEP">
                         <rect key="frame" x="16" y="28.5" width="60" height="60"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="69T-dF-Hqx"/>
@@ -66,10 +66,16 @@
                 <constraint firstItem="8WF-x7-aBq" firstAttribute="centerY" secondItem="njF-e1-oar" secondAttribute="centerY" id="OHx-Px-KlK"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="descriptionLabel" destination="DBa-vb-BzE" id="s8Q-wa-2vx"/>
+                <outlet property="mainPhoto" destination="v4m-4g-MEP" id="V4W-8W-xCr"/>
+                <outlet property="nameLabel" destination="aRD-YT-KDk" id="UH6-Bw-ZxV"/>
+            </connections>
             <point key="canvasLocation" x="63" y="90.5"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="next-arrow" width="25" height="25"/>
+        <image name="photoPlaceHolder" width="600" height="920"/>
     </resources>
 </document>

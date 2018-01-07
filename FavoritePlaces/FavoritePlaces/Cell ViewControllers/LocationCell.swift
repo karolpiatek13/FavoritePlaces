@@ -35,5 +35,6 @@ class LocationCell: UITableViewCell {
         annotation.coordinate = coordinate
         mapView.removeAnnotations(mapView.annotations)
         mapView.addAnnotation(annotation)
+        interactor?.coordinate = coordinate
     }
 }

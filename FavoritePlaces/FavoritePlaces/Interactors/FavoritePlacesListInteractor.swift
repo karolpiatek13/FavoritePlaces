@@ -11,11 +11,19 @@ import Foundation
 protocol FavoritePlacesListProtocol {
     func getCellInteractor(for index:Int) -> BaseCellInteractor?
     func getNumberOfVisibleCells() -> Int
+    func getData()
 }
 
 class FavoritePlacesListInteractor: FavoritePlacesListProtocol {
     
-    var favoritePlacesInteractors: [PlaceCellInteractor] = [PlaceCellInteractor(),PlaceCellInteractor(),PlaceCellInteractor()]
+    var favoritePlacesInteractors: [PlaceCellInteractor] = []
+    
+    func getData() {
+        favoritePlacesInteractors = []
+        for place in DataBaseManager.default.favoritePlaces {
+            favoritePlacesInteractors.append(PlaceCellInteractor(place: place))
+        }
+    }
     
     func getNumberOfVisibleCells() -> Int {
         return favoritePlacesInteractors.count
