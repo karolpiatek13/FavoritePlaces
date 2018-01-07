@@ -36,6 +36,11 @@ extension GalleryCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCell.typeName, for: indexPath) as? PhotoCell {
             cell.photo.image = interactor?.gallery[indexPath.row]
+            if indexPath.row != 0 {
+                let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+                cell.photo.isUserInteractionEnabled = true
+                cell.photo.addGestureRecognizer(tapGestureRecognizer)
+            }
             return cell
         }
         return UICollectionViewCell()
@@ -44,7 +49,43 @@ extension GalleryCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             interactor?.delegate?.showAvatarChangeOptions(picker: picker)
+            return
         }
+    }
+    
+    @objc func imageTapped(_ sender: UITapGestureRecognizer) {
+        guard let imageView = sender.view as? UIImageView else { return }
+        UIView.animate(withDuration: 0.5, animations: {
+            let newImageView = UIImageView(image: imageView.image)
+            newImageView.frame = self.getVisibleRect()
+            newImageView.backgroundColor = .black
+            newImageView.contentMode = .scaleAspectFit
+            newImageView.isUserInteractionEnabled = true
+            let tap = UITapGestureRecognizer(target: self, action: #selector(self.dismissFullscreenImage))
+            newImageView.addGestureRecognizer(tap)
+            self.interactor?.delegate?.view.addSubview(newImageView)
+            self.interactor?.delegate?.navigationController?.isNavigationBarHidden = true
+        })
+        interactor?.delegate?.tableView.isScrollEnabled = false
+    }
+    
+    func getVisibleRect() -> CGRect {
+        var visibleRect = CGRect.zero
+        guard let y = interactor?.delegate?.navigationController?.navigationBar.frame.height,
+            let offSet = interactor?.delegate?.tableView.contentOffset,
+            let viewSize = superview?.bounds.size else { return visibleRect }
+        visibleRect.origin = offSet
+        visibleRect.origin.y += y
+        visibleRect.size = viewSize
+        return visibleRect
+    }
+    
+    @objc func dismissFullscreenImage(_ sender: UITapGestureRecognizer) {
+        interactor?.delegate?.navigationController?.isNavigationBarHidden = false
+        interactor?.delegate?.tableView.isScrollEnabled = true
+        UIView.animate(withDuration: 0.5, animations: {
+        sender.view?.removeFromSuperview()
+        })
     }
 }
 
