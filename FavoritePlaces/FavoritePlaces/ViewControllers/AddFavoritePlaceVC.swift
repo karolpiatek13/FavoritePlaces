@@ -12,13 +12,23 @@ import AVKit
 class AddFavoritePlaceVC: UITableViewController {
     
     fileprivate let picker = UIImagePickerController()
+    
     var interactor: BaseTableInteractorProtocol = AddFavoritePlaceInteractor()
     
     override func viewDidLoad() {
         picker.delegate = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 128
-        self.hideKeyboardWhenTappedAround() 
+        self.hideKeyboardWhenTappedAround()
+        navigationController?.title = "AddFavoritePlace.NavBar.Title".localized
+    }
+    
+    @IBAction func cancelTapped(_ sender: UIBarButtonItem) {
+        navigationController?.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func saveTapped(_ sender: Any) {
+        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

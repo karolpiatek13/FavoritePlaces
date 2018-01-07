@@ -22,7 +22,6 @@ class AddFavoritePlaceInteractor: BaseTableInteractorProtocol {
         case description
         case galleryCollection
         case location
-        case addButton
         case empty
     }
     
@@ -32,7 +31,6 @@ class AddFavoritePlaceInteractor: BaseTableInteractorProtocol {
         .description,
         .galleryCollection,
         .location,
-        .addButton
     ]
     
     var cellInteractors : [Cell:BaseCellInteractor] = [
@@ -41,7 +39,6 @@ class AddFavoritePlaceInteractor: BaseTableInteractorProtocol {
         .description : DescriptionCellInteractor(title: "Description".localized),
         .galleryCollection : GalleryCellInteractor(),
         .location : LocationCellInteractor(),
-        .addButton : AddPlaceCellInteractor(buttonTitle: "AddPlaceButton.Title".localized)
     ]
     
     func getCellInteractor(for index:Int) -> BaseCellInteractor? {
