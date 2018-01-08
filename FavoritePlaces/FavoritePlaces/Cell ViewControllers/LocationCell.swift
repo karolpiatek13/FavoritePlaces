@@ -15,9 +15,13 @@ class LocationCell: UITableViewCell {
     
     var interactor: LocationCellInteractor?
     
-    func configure(interactor: LocationCellInteractor) {
+    func configure(interactor: LocationCellInteractor, coordinate: CLLocationCoordinate2D?) {
         self.interactor = interactor
         addTapRecognizer()
+        guard let coordinate = coordinate else { return }
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = coordinate
+        mapView.addAnnotation(annotation)
     }
     
     func addTapRecognizer() {
@@ -27,7 +31,7 @@ class LocationCell: UITableViewCell {
     }
     
     @objc func handleTap(_ gestureReconizer: UILongPressGestureRecognizer) {
-        
+        guard interactor?.isEditable ?? false else { return }
         let location = gestureReconizer.location(in: mapView)
         let coordinate = mapView.convert(location,toCoordinateFrom: mapView)
         

@@ -12,6 +12,7 @@ class GalleryCellInteractor: BaseCellInteractor {
     
     var gallery : [UIImage] = [#imageLiteral(resourceName: "photoPlaceHolder")]
     var delegate: AddFavoritePlaceVC?
+    var isEditable = true
     
     override func configure(_ cell : UITableViewCell) {
         guard let cell = cell as? GalleryCell else { return }

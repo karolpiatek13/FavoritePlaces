@@ -24,11 +24,9 @@ class PlaceCell: UITableViewCell {
     }
     
     @IBAction func detailsButtonTapped(_ sender: UIButton) {
-        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc : AddFavoritePlaceVC = storyboard.instantiateViewController(withIdentifier: AddFavoritePlaceVC.typeName) as! AddFavoritePlaceVC
-        
-        let navigationController = UINavigationController(rootViewController: vc)
-        
-        interactor?.delegate?.present(navigationController, animated: true, completion: nil)
+        guard let place = interactor?.place else { return }
+        let vc : AddFavoritePlaceVC = AddFavoritePlaceVC()
+        vc.interactor.setValues(place: place)
+        interactor?.delegate?.navigationController?.pushViewController(vc, animated: true)
     }
 }

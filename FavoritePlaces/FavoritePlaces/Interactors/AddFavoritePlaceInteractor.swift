@@ -14,11 +14,15 @@ protocol BaseTableInteractorProtocol {
     func getCellEnum(index: Int) -> AddFavoritePlaceInteractor.Cell
 }
 
-protocol AddFavoritePlaceProtocolDataBase {
+protocol AddFavoritePlaceProtocol {
+    var isEditable: Bool { get set }
     func save() -> Bool
+    func setValues(place: FavoritePlace)
 }
 
-class AddFavoritePlaceInteractor: BaseTableInteractorProtocol, AddFavoritePlaceProtocolDataBase {
+class AddFavoritePlaceInteractor: BaseTableInteractorProtocol, AddFavoritePlaceProtocol {
+    
+    var isEditable: Bool = true
     
     enum Cell: Int {
         case mainPhoto
@@ -67,10 +71,30 @@ class AddFavoritePlaceInteractor: BaseTableInteractorProtocol, AddFavoritePlaceP
             let galleryInteractor = cellInteractors[.galleryCollection] as? GalleryCellInteractor,
             let locationInteractor = cellInteractors[.location] as? LocationCellInteractor,
             let mainPhoto = mainPhotoInteractor.mainPhoto, !placeNameInteractor.value.isEmpty else { return false }
-        
-        let favPlace = FavoritePlace(mainPhoto: mainPhoto, placeName: placeNameInteractor.value, description: descriptionInteractor.value, gallery: galleryInteractor.gallery, location: locationInteractor.coordinate)
+        var gallery = galleryInteractor.gallery
+        gallery.remove(at: Constants.galleryPlaceHolder)
+        let favPlace = FavoritePlace(mainPhoto: mainPhoto, placeName: placeNameInteractor.value, description: descriptionInteractor.value, gallery: gallery, location: locationInteractor.coordinate)
         DataBaseManager.default.favoritePlaces.append(favPlace)
         
         return true
+    }
+    
+    func setValues(place: FavoritePlace) {
+        guard let mainPhotoInteractor = cellInteractors[.mainPhoto] as? MainPhotoCellInteractor,
+            let placeNameInteractor = cellInteractors[.placeName] as? PlaceNameCellInteractor,
+            let descriptionInteractor = cellInteractors[.description] as? DescriptionCellInteractor,
+            let galleryInteractor = cellInteractors[.galleryCollection] as? GalleryCellInteractor,
+            let locationInteractor = cellInteractors[.location] as? LocationCellInteractor else { return }
+        isEditable = false
+        mainPhotoInteractor.mainPhoto = place.mainPhoto
+        mainPhotoInteractor.isEditable = false
+        placeNameInteractor.value = place.placeName
+        placeNameInteractor.isEditable = false
+        descriptionInteractor.value = place.placeDescription
+        descriptionInteractor.isEditable = false
+        galleryInteractor.gallery = place.gallery ?? []
+        galleryInteractor.isEditable = false
+        locationInteractor.coordinate = place.location
+        locationInteractor.isEditable = false
     }
 }

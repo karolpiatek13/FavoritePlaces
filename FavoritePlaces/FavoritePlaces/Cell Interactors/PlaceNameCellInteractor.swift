@@ -12,6 +12,7 @@ class PlaceNameCellInteractor: BaseCellInteractor {
     
     var title: String
     var value: String
+    var isEditable = true
     
     init(title: String, value: String) {
         self.title = title
@@ -21,7 +22,7 @@ class PlaceNameCellInteractor: BaseCellInteractor {
     
     override func configure(_ cell : UITableViewCell) {
         guard let cell = cell as? PlaceNameCell else { return }
-        cell.configure(interactor: self, title: title, value: value)
+        cell.configure(interactor: self, title: title, value: value, isEditable: isEditable)
     }
     
     override var cellType: AnyClass {

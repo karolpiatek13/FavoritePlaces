@@ -13,7 +13,7 @@ class AddFavoritePlaceVC: UITableViewController {
     
     fileprivate let picker = UIImagePickerController()
     
-    var interactor: BaseTableInteractorProtocol & AddFavoritePlaceProtocolDataBase = AddFavoritePlaceInteractor()
+    var interactor: BaseTableInteractorProtocol & AddFavoritePlaceProtocol = AddFavoritePlaceInteractor()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +29,9 @@ class AddFavoritePlaceVC: UITableViewController {
     }
     
     @IBAction func saveTapped(_ sender: Any) {
-        interactor.save()
-        navigationController?.dismiss(animated: true, completion: nil)
+        if interactor.save() {
+            navigationController?.dismiss(animated: true, completion: nil)
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

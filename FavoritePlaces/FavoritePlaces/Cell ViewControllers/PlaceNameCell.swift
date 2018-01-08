@@ -38,9 +38,10 @@ class PlaceNameCell: UITableViewCell {
         }
     }
     
-    func configure(interactor: PlaceNameCellInteractor, title: String, value: String) {
+    func configure(interactor: PlaceNameCellInteractor, title: String, value: String, isEditable: Bool) {
         self.interactor = interactor
         placeNameLabel.text = title
         placeNameTextField.text = value
+        isUserInteractionEnabled = isEditable
     }
 }

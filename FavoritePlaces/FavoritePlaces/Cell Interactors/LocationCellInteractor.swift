@@ -12,10 +12,11 @@ import MapKit
 class LocationCellInteractor: BaseCellInteractor {
     
     var coordinate: CLLocationCoordinate2D?
+    var isEditable = true
     
     override func configure(_ cell : UITableViewCell) {
         guard let cell = cell as? LocationCell else { return }
-        cell.configure(interactor: self)
+        cell.configure(interactor: self, coordinate: coordinate)
     }
     
     override var cellType: AnyClass {

@@ -36,7 +36,7 @@ extension GalleryCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCell.typeName, for: indexPath) as? PhotoCell {
             cell.photo.image = interactor?.gallery[indexPath.row]
-            if indexPath.row != 0 {
+            if indexPath.row != 0 || !(interactor?.isEditable ?? true) {
                 let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
                 cell.photo.isUserInteractionEnabled = true
                 cell.photo.addGestureRecognizer(tapGestureRecognizer)
@@ -47,7 +47,7 @@ extension GalleryCell: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
+        if indexPath.row == 0 && interactor?.isEditable ?? false {
             interactor?.delegate?.showAvatarChangeOptions(picker: picker)
             return
         }

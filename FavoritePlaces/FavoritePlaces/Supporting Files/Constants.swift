@@ -10,4 +10,5 @@ import Foundation
 
 struct Constants {
     static let animateDuration = 0.5
+    static let galleryPlaceHolder = 0
 }
