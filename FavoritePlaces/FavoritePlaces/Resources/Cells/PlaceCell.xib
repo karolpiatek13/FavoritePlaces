@@ -45,6 +45,9 @@
                             <constraint firstAttribute="width" constant="40" id="gZj-QW-4Z4"/>
                         </constraints>
                         <state key="normal" image="next-arrow"/>
+                        <connections>
+                            <action selector="detailsButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="TKB-qb-gPQ"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

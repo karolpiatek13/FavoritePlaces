@@ -35,11 +35,12 @@ extension FavoritePlacesListVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cellInteractor = interactor.getCellInteractor(for: indexPath.row) else {
+        guard let cellInteractor = interactor.getCellInteractor(for: indexPath.row) as? PlaceCellInteractor else {
             return UITableViewCell()
         }
         let cellView = tableView.getReusableCellSafe(cellType: cellInteractor.cellType)
         cellInteractor.configure(cellView)
+        cellInteractor.delegate = self
         return cellView
     }
     

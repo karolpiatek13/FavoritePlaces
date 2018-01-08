@@ -13,7 +13,7 @@ class AddFavoritePlaceVC: UITableViewController {
     
     fileprivate let picker = UIImagePickerController()
     
-    var interactor: AddFavoritePlaceProtocol = AddFavoritePlaceInteractor()
+    var interactor: BaseTableInteractorProtocol & AddFavoritePlaceProtocolDataBase = AddFavoritePlaceInteractor()
     
     override func viewDidLoad() {
         super.viewDidLoad()

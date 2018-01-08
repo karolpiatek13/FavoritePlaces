@@ -11,6 +11,7 @@ import UIKit
 class PlaceCellInteractor: BaseCellInteractor {
     
     var place: FavoritePlace
+    var delegate: FavoritePlacesListVC?
     
     init(place: FavoritePlace) {
         self.place = place
