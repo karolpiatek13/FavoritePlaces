@@ -17,6 +17,7 @@ class FavoritePlacesListVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.leftBarButtonItem = editButtonItem
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 90
     }
@@ -25,6 +26,16 @@ class FavoritePlacesListVC: UIViewController {
         super.viewWillAppear(animated)
         interactor.getData()
         tableView.reloadData()
+    }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        if(editing && !tableView.isEditing){
+            tableView.setEditing(true, animated: true)
+            editButtonItem.title = "Done".localized
+        }else{
+            tableView.setEditing(false, animated: true)
+             editButtonItem.title = "Edit".localized
+        }
     }
 }
 
@@ -54,5 +65,16 @@ extension FavoritePlacesListVC: UITableViewDataSource, UITableViewDelegate {
             interactor.deleteIntegrator(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .middle)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return .none
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        guard let movedObject = interactor.getCellInteractor(for: sourceIndexPath.row) as? PlaceCellInteractor else { return }
+        interactor.deleteIntegrator(at: sourceIndexPath.row)
+        interactor.insertInteractor(placeInteractor: movedObject, at: destinationIndexPath.row)
+        tableView.reloadData()
     }
 }

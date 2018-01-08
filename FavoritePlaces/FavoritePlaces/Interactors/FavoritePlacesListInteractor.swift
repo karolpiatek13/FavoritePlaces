@@ -13,6 +13,7 @@ protocol FavoritePlacesListProtocol {
     func getNumberOfVisibleCells() -> Int
     func getData()
     func deleteIntegrator(at index: Int)
+    func insertInteractor(placeInteractor: PlaceCellInteractor, at: Int)
 }
 
 class FavoritePlacesListInteractor: FavoritePlacesListProtocol {
@@ -36,5 +37,9 @@ class FavoritePlacesListInteractor: FavoritePlacesListProtocol {
     
     func deleteIntegrator(at index: Int) {
         favoritePlacesInteractors.remove(at: index)
+    }
+    
+    func insertInteractor(placeInteractor: PlaceCellInteractor, at: Int) {
+        favoritePlacesInteractors.insert(placeInteractor, at: at)
     }
 }

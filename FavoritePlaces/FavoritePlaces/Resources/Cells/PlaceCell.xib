@@ -41,7 +41,7 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8WF-x7-aBq">
                         <rect key="frame" x="338" y="0.0" width="40" height="116.5"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="116.5" id="IGo-9Z-tiH"/>
+                            <constraint firstAttribute="height" priority="999" constant="116.5" id="IGo-9Z-tiH"/>
                             <constraint firstAttribute="width" constant="40" id="gZj-QW-4Z4"/>
                         </constraints>
                         <state key="normal" image="next-arrow"/>
