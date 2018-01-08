@@ -14,6 +14,7 @@ class AddFavoritePlaceVC: UITableViewController {
     fileprivate let picker = UIImagePickerController()
     
     var interactor: BaseTableInteractorProtocol & AddFavoritePlaceProtocol = AddFavoritePlaceInteractor()
+    var isEditable = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,25 @@ class AddFavoritePlaceVC: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 128
         self.hideKeyboardWhenTappedAround()
-        navigationController?.title = "AddFavoritePlace.NavBar.Title".localized
+        guard navigationItem.rightBarButtonItems == nil else {
+            title = "AddFavoritePlace.NavBar.Title".localized
+            return
+        }
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(setEditable))
+        title = "FavoritePlace.NavBar.Title".localized
+    }
+    
+    @objc func setEditable() {
+        isEditable = !isEditable
+        guard let barButton = navigationItem.rightBarButtonItem else { return }
+        if isEditable {
+            barButton.title = "Done".localized
+        } else {
+            barButton.title = "Edit".localized
+            interactor.saveExistingPlace()
+        }
+        interactor.setDescriptionEditing(editing: isEditable)
+        tableView.reloadData()
     }
     
     @IBAction func cancelTapped(_ sender: UIBarButtonItem) {
@@ -29,7 +48,7 @@ class AddFavoritePlaceVC: UITableViewController {
     }
     
     @IBAction func saveTapped(_ sender: Any) {
-        if interactor.save() {
+        if interactor.saveNewPlace() {
             navigationController?.dismiss(animated: true, completion: nil)
         }
     }

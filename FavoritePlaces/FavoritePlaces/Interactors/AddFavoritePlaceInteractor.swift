@@ -16,12 +16,15 @@ protocol BaseTableInteractorProtocol {
 
 protocol AddFavoritePlaceProtocol {
     var isEditable: Bool { get set }
-    func save() -> Bool
+    func saveNewPlace() -> Bool
+    func saveExistingPlace()
     func setValues(place: FavoritePlace)
+    func setDescriptionEditing(editing: Bool)
 }
 
 class AddFavoritePlaceInteractor: BaseTableInteractorProtocol, AddFavoritePlaceProtocol {
     
+    var place: FavoritePlace?
     var isEditable: Bool = true
     
     enum Cell: Int {
@@ -64,7 +67,7 @@ class AddFavoritePlaceInteractor: BaseTableInteractorProtocol, AddFavoritePlaceP
         return Cell.empty
     }
     
-    func save() -> Bool {
+    func saveNewPlace() -> Bool {
         guard let mainPhotoInteractor = cellInteractors[.mainPhoto] as? MainPhotoCellInteractor,
             let placeNameInteractor = cellInteractors[.placeName] as? PlaceNameCellInteractor,
             let descriptionInteractor = cellInteractors[.description] as? DescriptionCellInteractor,
@@ -79,12 +82,25 @@ class AddFavoritePlaceInteractor: BaseTableInteractorProtocol, AddFavoritePlaceP
         return true
     }
     
+    func saveExistingPlace() {
+        guard let descriptionInteractor = cellInteractors[.description] as? DescriptionCellInteractor,
+            let place = place else { return }
+        place.placeDescription = descriptionInteractor.value
+        DataBaseManager.default.favoritePlaces = DataBaseManager.default.favoritePlaces.map { dbPlace in
+            guard dbPlace.placeName != place.placeName else {
+                return place
+            }
+            return dbPlace
+        }
+    }
+    
     func setValues(place: FavoritePlace) {
         guard let mainPhotoInteractor = cellInteractors[.mainPhoto] as? MainPhotoCellInteractor,
             let placeNameInteractor = cellInteractors[.placeName] as? PlaceNameCellInteractor,
             let descriptionInteractor = cellInteractors[.description] as? DescriptionCellInteractor,
             let galleryInteractor = cellInteractors[.galleryCollection] as? GalleryCellInteractor,
             let locationInteractor = cellInteractors[.location] as? LocationCellInteractor else { return }
+        self.place = place
         isEditable = false
         mainPhotoInteractor.mainPhoto = place.mainPhoto
         mainPhotoInteractor.isEditable = false
@@ -96,5 +112,10 @@ class AddFavoritePlaceInteractor: BaseTableInteractorProtocol, AddFavoritePlaceP
         galleryInteractor.isEditable = false
         locationInteractor.coordinate = place.location
         locationInteractor.isEditable = false
+    }
+    
+    func setDescriptionEditing(editing: Bool) {
+        guard let descriptionInteractor = cellInteractors[.description] as? DescriptionCellInteractor else { return }
+        descriptionInteractor.isEditable = editing
     }
 }

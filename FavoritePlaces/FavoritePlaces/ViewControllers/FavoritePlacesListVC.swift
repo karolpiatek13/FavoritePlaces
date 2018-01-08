@@ -24,6 +24,7 @@ class FavoritePlacesListVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        title = "FavoritePlacesList.NavBar.Title".localized
         interactor.getData()
         tableView.reloadData()
     }

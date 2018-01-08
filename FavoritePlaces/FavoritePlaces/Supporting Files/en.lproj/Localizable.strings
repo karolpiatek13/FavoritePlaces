@@ -12,3 +12,5 @@
 "Permissions.Alert.PhotoLibrary" = "Photo Library";
 "Permissions.Alert.Cancel" = "Cancel";
 "AddFavoritePlace.NavBar.Title" = "Add place";
+"FavoritePlacesList.NavBar.Title" = "Favorite places";
+"FavoritePlace.NavBar.Title" = "Favorite place";
