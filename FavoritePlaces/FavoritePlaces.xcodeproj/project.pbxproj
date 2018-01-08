@@ -22,6 +22,7 @@
 		004468F21FFC097A00326650 /* MainPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004468F01FFC097A00326650 /* MainPhotoCell.swift */; };
 		004468F31FFC097A00326650 /* MainPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004468F11FFC097A00326650 /* MainPhotoCell.xib */; };
 		004468F51FFC09F400326650 /* MainPhotoCellInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004468F41FFC09F400326650 /* MainPhotoCellInteractor.swift */; };
+		0047DFB520035EC10049A495 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0047DFB420035EC10049A495 /* Constants.swift */; };
 		00CD757C1FEE6220001E6F96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CD757B1FEE6220001E6F96 /* AppDelegate.swift */; };
 		00CD75831FEE6220001E6F96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00CD75821FEE6220001E6F96 /* Assets.xcassets */; };
 		00D90F2A1FFD3DE2008478EC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00D90F2C1FFD3DE2008478EC /* Localizable.strings */; };
@@ -61,6 +62,7 @@
 		004468F01FFC097A00326650 /* MainPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPhotoCell.swift; sourceTree = "<group>"; };
 		004468F11FFC097A00326650 /* MainPhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainPhotoCell.xib; sourceTree = "<group>"; };
 		004468F41FFC09F400326650 /* MainPhotoCellInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPhotoCellInteractor.swift; sourceTree = "<group>"; };
+		0047DFB420035EC10049A495 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		00CD75781FEE6220001E6F96 /* FavoritePlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FavoritePlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00CD757B1FEE6220001E6F96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00CD75821FEE6220001E6F96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				00D90F521FFF8FAD008478EC /* Extensions */,
 				00CD75821FEE6220001E6F96 /* Assets.xcassets */,
 				00CD757B1FEE6220001E6F96 /* AppDelegate.swift */,
+				0047DFB420035EC10049A495 /* Constants.swift */,
 				00D90F2C1FFD3DE2008478EC /* Localizable.strings */,
 				00F56EBC2000FDD60011C630 /* LaunchScreen.storyboard */,
 			);
@@ -326,6 +329,7 @@
 				00364B2A200225C000C4696D /* PlaceCell.swift in Sources */,
 				00364B2720010EF300C4696D /* FavoritePlacesListVC.swift in Sources */,
 				004468F51FFC09F400326650 /* MainPhotoCellInteractor.swift in Sources */,
+				0047DFB520035EC10049A495 /* Constants.swift in Sources */,
 				00D90F511FFF83F4008478EC /* GalleryCellInteractor.swift in Sources */,
 				00D90F321FFD62D9008478EC /* PlaceNameCell.swift in Sources */,
 				00D90F4E1FFF773A008478EC /* PhotoCell.swift in Sources */,

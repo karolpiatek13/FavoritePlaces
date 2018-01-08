@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="117" id="KGk-i7-Jjw" customClass="PlaceCell" customModule="FavoritePlaces" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="120" id="KGk-i7-Jjw" customClass="PlaceCell" customModule="FavoritePlaces" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="378" height="117"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -41,6 +41,7 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8WF-x7-aBq">
                         <rect key="frame" x="338" y="0.0" width="40" height="116.5"/>
                         <constraints>
+                            <constraint firstAttribute="height" constant="116.5" id="IGo-9Z-tiH"/>
                             <constraint firstAttribute="width" constant="40" id="gZj-QW-4Z4"/>
                         </constraints>
                         <state key="normal" image="next-arrow"/>
@@ -51,7 +52,6 @@
                     <constraint firstItem="8WF-x7-aBq" firstAttribute="leading" secondItem="DBa-vb-BzE" secondAttribute="trailing" constant="8" id="G4W-2u-pgb"/>
                     <constraint firstAttribute="trailing" secondItem="8WF-x7-aBq" secondAttribute="trailing" id="MHB-lB-npr"/>
                     <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="DBa-vb-BzE" secondAttribute="bottom" constant="8" id="amk-0h-05X"/>
-                    <constraint firstItem="v4m-4g-MEP" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="cZe-E9-f5r"/>
                     <constraint firstItem="8WF-x7-aBq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="eEP-KO-1Fs"/>
                     <constraint firstAttribute="bottom" secondItem="8WF-x7-aBq" secondAttribute="bottom" id="ibt-LR-lpg"/>
                     <constraint firstItem="DBa-vb-BzE" firstAttribute="leading" secondItem="v4m-4g-MEP" secondAttribute="trailing" constant="8" id="j7r-y9-Quo"/>
@@ -63,7 +63,6 @@
             </tableViewCellContentView>
             <constraints>
                 <constraint firstItem="v4m-4g-MEP" firstAttribute="centerY" secondItem="njF-e1-oar" secondAttribute="centerY" id="C4V-VT-GAw"/>
-                <constraint firstItem="8WF-x7-aBq" firstAttribute="centerY" secondItem="njF-e1-oar" secondAttribute="centerY" id="OHx-Px-KlK"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>

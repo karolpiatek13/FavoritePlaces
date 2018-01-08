@@ -11,7 +11,6 @@ import MapKit
 
 class FavoritePlace {
     
-    //let id: Int64?
     var mainPhoto: UIImage
     var placeName: String
     var placeDescription: String?

@@ -13,9 +13,10 @@ class AddFavoritePlaceVC: UITableViewController {
     
     fileprivate let picker = UIImagePickerController()
     
-    var interactor: BaseTableInteractorProtocol = AddFavoritePlaceInteractor()
+    var interactor: AddFavoritePlaceProtocol = AddFavoritePlaceInteractor()
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         picker.delegate = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 128

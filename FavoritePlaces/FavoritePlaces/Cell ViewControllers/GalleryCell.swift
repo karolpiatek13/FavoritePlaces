@@ -55,7 +55,7 @@ extension GalleryCell: UICollectionViewDelegate, UICollectionViewDataSource {
     
     @objc func imageTapped(_ sender: UITapGestureRecognizer) {
         guard let imageView = sender.view as? UIImageView else { return }
-        UIView.animate(withDuration: 0.5, animations: {
+        UIView.animate(withDuration: Constants.animateDuration, animations: {
             let newImageView = UIImageView(image: imageView.image)
             newImageView.frame = self.getVisibleRect()
             newImageView.backgroundColor = .black
@@ -64,7 +64,7 @@ extension GalleryCell: UICollectionViewDelegate, UICollectionViewDataSource {
             let tap = UITapGestureRecognizer(target: self, action: #selector(self.dismissFullscreenImage))
             newImageView.addGestureRecognizer(tap)
             self.interactor?.delegate?.view.addSubview(newImageView)
-            self.interactor?.delegate?.navigationController?.isNavigationBarHidden = true
+            self.interactor?.delegate?.navigationController?.setNavigationBarHidden(true, animated: false)
         })
         interactor?.delegate?.tableView.isScrollEnabled = false
     }
@@ -81,9 +81,9 @@ extension GalleryCell: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     @objc func dismissFullscreenImage(_ sender: UITapGestureRecognizer) {
-        interactor?.delegate?.navigationController?.isNavigationBarHidden = false
+        interactor?.delegate?.navigationController?.setNavigationBarHidden(false, animated: false)
         interactor?.delegate?.tableView.isScrollEnabled = true
-        UIView.animate(withDuration: 0.5, animations: {
+        UIView.animate(withDuration: Constants.animateDuration, animations: {
         sender.view?.removeFromSuperview()
         })
     }

@@ -12,10 +12,13 @@ protocol BaseTableInteractorProtocol {
     func getCellInteractor(for index:Int) -> BaseCellInteractor?
     func getNumberOfVisibleCells() -> Int
     func getCellEnum(index: Int) -> AddFavoritePlaceInteractor.Cell
+}
+
+protocol AddFavoritePlaceProtocol: BaseTableInteractorProtocol {
     func save() -> Bool
 }
 
-class AddFavoritePlaceInteractor: BaseTableInteractorProtocol {
+class AddFavoritePlaceInteractor: AddFavoritePlaceProtocol {
     
     enum Cell: Int {
         case mainPhoto

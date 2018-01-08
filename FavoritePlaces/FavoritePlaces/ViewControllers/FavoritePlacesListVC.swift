@@ -17,23 +17,18 @@ class FavoritePlacesListVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 90
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         interactor.getData()
         tableView.reloadData()
-        super.viewWillAppear(animated)
     }
 }
 
-extension FavoritePlacesListVC: UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+extension FavoritePlacesListVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return interactor.getNumberOfVisibleCells()
@@ -46,5 +41,17 @@ extension FavoritePlacesListVC: UITableViewDataSource {
         let cellView = tableView.getReusableCellSafe(cellType: cellInteractor.cellType)
         cellInteractor.configure(cellView)
         return cellView
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle:   UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            DataBaseManager.default.favoritePlaces.remove(at: indexPath.row)
+            interactor.deleteIntegrator(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .middle)
+        }
     }
 }

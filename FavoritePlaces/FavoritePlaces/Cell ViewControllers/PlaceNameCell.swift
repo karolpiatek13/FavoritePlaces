@@ -18,7 +18,7 @@ class PlaceNameCell: UITableViewCell {
 
     @IBAction func textFieldEditingChanged(_ sender: UITextField) {
         interactor?.value = sender.text ?? ""
-        UIView.animate(withDuration: 0.5, delay: 0.0, options: .transitionCrossDissolve, animations: {
+        UIView.animate(withDuration: Constants.animateDuration, delay: 0.0, options: .transitionCrossDissolve, animations: {
             self.placeNameTextField.layer.borderColor = UIColor.clear.cgColor
             self.placeNameErrorLabel.alpha = 0
         })
@@ -26,7 +26,7 @@ class PlaceNameCell: UITableViewCell {
     
     @IBAction func textFieldEditingDidEnd(_ sender: UITextField) {
         if placeNameTextField.text?.isEmpty ?? true {
-            UIView.animate(withDuration: 0.5, delay: 0.0, options: .transitionCrossDissolve, animations: {
+            UIView.animate(withDuration: Constants.animateDuration, delay: 0.0, options: .transitionCrossDissolve, animations: {
                 self.placeNameErrorLabel.text = "PlaceName.Error.Empty".localized
                 self.placeNameErrorLabel.isHidden = false
                 self.placeNameTextField.layer.borderColor = UIColor.red.cgColor
