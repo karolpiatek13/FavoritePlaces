@@ -21,5 +21,7 @@ class DescriptionCell: UITableViewCell {
         descriptionTitleLabel.text = title
         textView.text = value
         isUserInteractionEnabled = isEditable
+        textView.layer.borderWidth = 1
+        textView.layer.borderColor = UIColor.black.cgColor
     }
 }

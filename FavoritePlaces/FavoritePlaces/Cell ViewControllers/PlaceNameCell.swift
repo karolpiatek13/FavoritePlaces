@@ -19,7 +19,7 @@ class PlaceNameCell: UITableViewCell {
     @IBAction func textFieldEditingChanged(_ sender: UITextField) {
         interactor?.value = sender.text ?? ""
         UIView.animate(withDuration: Constants.animateDuration, delay: 0.0, options: .transitionCrossDissolve, animations: {
-            self.placeNameTextField.layer.borderColor = UIColor.clear.cgColor
+            self.placeNameTextField.layer.borderColor = UIColor.black.cgColor
             self.placeNameErrorLabel.alpha = 0
         })
     }
@@ -30,7 +30,6 @@ class PlaceNameCell: UITableViewCell {
                 self.placeNameErrorLabel.text = "PlaceName.Error.Empty".localized
                 self.placeNameErrorLabel.isHidden = false
                 self.placeNameTextField.layer.borderColor = UIColor.red.cgColor
-                self.placeNameTextField.layer.cornerRadius = 8.0
                 self.placeNameTextField.layer.masksToBounds = true
                 self.placeNameTextField.layer.borderWidth = 1.0
                 self.placeNameErrorLabel.alpha = 1
