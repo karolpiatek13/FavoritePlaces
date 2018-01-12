@@ -22,6 +22,10 @@ class AddFavoritePlaceVC: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 128
         self.hideKeyboardWhenTappedAround()
+        setNavigationBar()
+    }
+    
+    func setNavigationBar() {
         guard navigationItem.rightBarButtonItems == nil else {
             title = "AddFavoritePlace.NavBar.Title".localized
             return
