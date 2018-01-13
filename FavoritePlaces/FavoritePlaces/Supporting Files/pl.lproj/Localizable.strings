@@ -8,6 +8,9 @@
 
 "Permissions.Alert.Title" = "Dodaj zdjęcie";
 "PlaceName.Error.Empty" = "Proszę podać nazwę miejsca";
-"Permissions.Alert.Camera" = "Kamera";
+"Permissions.Alert.Camera" = "Aparat";
 "Permissions.Alert.PhotoLibrary" = "Biblioteka zdjęć";
 "Permissions.Alert.Cancel" = "Anuluj";
+"AddFavoritePlace.NavBar.Title" = "Dodaj miejsce";
+"FavoritePlacesList.NavBar.Title" = "Ulubione miejsca";
+"FavoritePlace.NavBar.Title" = "Ulubione miejsce";

@@ -11,6 +11,8 @@ import UIKit
 class DescriptionCellInteractor: BaseCellInteractor {
     
     var title: String
+    var value: String?
+    var isEditable = true
     
     init(title: String) {
         self.title = title
@@ -19,7 +21,7 @@ class DescriptionCellInteractor: BaseCellInteractor {
     
     override func configure(_ cell : UITableViewCell) {
         guard let cell = cell as? DescriptionCell else { return }
-        cell.configure(interactor: self, title: title)
+        cell.configure(interactor: self, title: title, value: value ?? "", isEditable: isEditable)
     }
     
     override var cellType: AnyClass {

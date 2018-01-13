@@ -14,8 +14,9 @@ class MainPhotoCell: UITableViewCell {
     
     var interactor : MainPhotoCellInteractor?
     
-    func configure(interactor: MainPhotoCellInteractor, mainPhoto: UIImage) {
+    func configure(interactor: MainPhotoCellInteractor, mainPhoto: UIImage, isEditable: Bool) {
         self.interactor = interactor
         self.mainPhoto.image = mainPhoto
+        isUserInteractionEnabled = isEditable
     }
 }

@@ -12,13 +12,49 @@ import AVKit
 class AddFavoritePlaceVC: UITableViewController {
     
     fileprivate let picker = UIImagePickerController()
-    var interactor: BaseTableInteractorProtocol = AddFavoritePlaceInteractor()
+    
+    var interactor: BaseTableInteractorProtocol & AddFavoritePlaceProtocol = AddFavoritePlaceInteractor()
+    var isEditable = false
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         picker.delegate = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 128
-        self.hideKeyboardWhenTappedAround() 
+        self.hideKeyboardWhenTappedAround()
+        setNavigationBar()
+    }
+    
+    func setNavigationBar() {
+        guard navigationItem.rightBarButtonItems == nil else {
+            title = "AddFavoritePlace.NavBar.Title".localized
+            return
+        }
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(setEditable))
+        title = "FavoritePlace.NavBar.Title".localized
+    }
+    
+    @objc func setEditable() {
+        isEditable = !isEditable
+        guard let barButton = navigationItem.rightBarButtonItem else { return }
+        if isEditable {
+            barButton.title = "Done".localized
+        } else {
+            barButton.title = "Edit".localized
+            interactor.saveExistingPlace()
+        }
+        interactor.setDescriptionEditing(editing: isEditable)
+        tableView.reloadData()
+    }
+    
+    @IBAction func cancelTapped(_ sender: UIBarButtonItem) {
+        navigationController?.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func saveTapped(_ sender: Any) {
+        if interactor.saveNewPlace() {
+            navigationController?.dismiss(animated: true, completion: nil)
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -91,7 +127,7 @@ extension AddFavoritePlaceVC: UIImagePickerControllerDelegate, UINavigationContr
             picker.dismiss(animated: true, completion: nil)
             return
         }
-        guard let cellInteractor = interactor.getCellInteractor(for: 0) as? MainPhotoCellInteractor else { return }
+        guard let cellInteractor = interactor.getCellInteractor(for: AddFavoritePlaceInteractor.Cell.mainPhoto.rawValue) as? MainPhotoCellInteractor else { return }
         cellInteractor.mainPhoto = chosenImage
         tableView.reloadData()
         picker.dismiss(animated: true, completion: nil)
@@ -111,5 +147,7 @@ extension AddFavoritePlaceVC: UITextViewDelegate {
         tableView.endUpdates()
         UIView.setAnimationsEnabled(true)
         tableView.setContentOffset(currentOffset, animated: false)
+        guard let cellInteractor = interactor.getCellInteractor(for: AddFavoritePlaceInteractor.Cell.description.rawValue) as? DescriptionCellInteractor else { return }
+        cellInteractor.value = textView.text
     }
 }

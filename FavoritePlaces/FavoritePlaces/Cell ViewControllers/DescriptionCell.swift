@@ -16,8 +16,12 @@ class DescriptionCell: UITableViewCell {
     
     var interactor: DescriptionCellInteractor?
     
-    func configure(interactor: DescriptionCellInteractor, title: String) {
+    func configure(interactor: DescriptionCellInteractor, title: String, value: String, isEditable: Bool) {
         self.interactor = interactor
         descriptionTitleLabel.text = title
+        textView.text = value
+        isUserInteractionEnabled = isEditable
+        textView.layer.borderWidth = 1
+        textView.layer.borderColor = UIColor.black.cgColor
     }
 }
