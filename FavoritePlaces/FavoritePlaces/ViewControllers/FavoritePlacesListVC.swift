@@ -62,20 +62,14 @@ extension FavoritePlacesListVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle:   UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
-            DataBaseManager.default.favoritePlaces.remove(at: indexPath.row)
-            interactor.deleteIntegrator(at: indexPath.row)
+            interactor.deleteIntegratorAndCoreData(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .middle)
         }
     }
     
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
-        return .none
-    }
-    
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         guard let movedObject = interactor.getCellInteractor(for: sourceIndexPath.row) as? PlaceCellInteractor else { return }
-        interactor.deleteIntegrator(at: sourceIndexPath.row)
-        interactor.insertInteractor(placeInteractor: movedObject, at: destinationIndexPath.row)
+        interactor.changePosition(placeInteractor: movedObject, sourceIndex: sourceIndexPath.row, destinationIndex: destinationIndexPath.row)
         tableView.reloadData()
     }
 }
