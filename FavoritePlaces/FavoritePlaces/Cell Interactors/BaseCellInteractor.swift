@@ -9,7 +9,7 @@
 import UIKit
 
 class BaseCellInteractor: NSObject {
-    var cellType: AnyClass {
+    var cellType: CellType {
         fatalError("You have to override `cellType` variable in the "+String(describing: self)+" interactor.")
     }
     func configure(_ cell: UITableViewCell) {

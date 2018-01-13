@@ -13,7 +13,7 @@ class MainPhotoCellInteractor: BaseCellInteractor {
     var mainPhoto: UIImage?
     var isEditable = true
     
-    override var cellType: AnyClass {
+    override var cellType: CellType {
         return MainPhotoCell.self
     }
     

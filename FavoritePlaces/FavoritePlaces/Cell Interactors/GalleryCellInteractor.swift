@@ -19,7 +19,7 @@ class GalleryCellInteractor: BaseCellInteractor {
         cell.configure(interactor: self, gallery: gallery)
     }
     
-    override var cellType: AnyClass {
+    override var cellType: CellType {
         return GalleryCell.self
     }
 }

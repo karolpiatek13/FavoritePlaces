@@ -8,9 +8,15 @@
 
 import UIKit
 
+extension UITableViewCell : CellTypeProtocol{}
+
+protocol CellTypeProtocol {}
+
+typealias CellType = CellTypeProtocol.Type
+
 extension UITableView {
     
-    func getReusableCellSafe(cellType: AnyClass) -> UITableViewCell {
+    func getReusableCellSafe(cellType: CellType) -> UITableViewCell {
         var cell = self.dequeueReusableCell(withIdentifier: String(describing: cellType))
         if(cell == nil){
             let className = String(describing:cellType)

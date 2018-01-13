@@ -24,7 +24,7 @@ class DescriptionCellInteractor: BaseCellInteractor {
         cell.configure(interactor: self, title: title, value: value ?? "", isEditable: isEditable)
     }
     
-    override var cellType: AnyClass {
+    override var cellType: CellType {
         return DescriptionCell.self
     }
 }
