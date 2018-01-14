@@ -86,8 +86,8 @@ class AddFavoritePlaceInteractor: BaseTableInteractorProtocol, AddFavoritePlaceP
         favoritePlace.mainPhoto = UIImagePNGRepresentation(mainPhoto)
         favoritePlace.placeDescription = descriptionInteractor.value
         favoritePlace.gallery = gallery.coreDataRepresentation()
-        favoritePlace.gegrLat = locationInteractor.coordinate?.latitude ?? 0.0
-        favoritePlace.gegrLon = locationInteractor.coordinate?.longitude ?? 0.0
+        favoritePlace.gegrLat = locationInteractor.coordinate?.latitude ?? -1.0
+        favoritePlace.gegrLon = locationInteractor.coordinate?.longitude ?? -1.0
         
         do {
             let favoritePlaces = try context.fetch(FavoritePlace.fetchRequest())
@@ -130,8 +130,10 @@ class AddFavoritePlaceInteractor: BaseTableInteractorProtocol, AddFavoritePlaceP
         descriptionInteractor.isEditable = false
         galleryInteractor.gallery = place.gallery?.imageArray() ?? []
         galleryInteractor.isEditable = false
-        locationInteractor.coordinate = CLLocationCoordinate2D(latitude: place.gegrLat, longitude: place.gegrLon)
         locationInteractor.isEditable = false
+        if place.gegrLat > 0 && place.gegrLon > 0 {
+            locationInteractor.coordinate = CLLocationCoordinate2D(latitude: place.gegrLat, longitude: place.gegrLon)
+        }
     }
     
     func setDescriptionEditing(editing: Bool) {
