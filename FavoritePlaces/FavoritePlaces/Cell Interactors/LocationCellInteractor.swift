@@ -19,7 +19,7 @@ class LocationCellInteractor: BaseCellInteractor {
         cell.configure(interactor: self, coordinate: coordinate)
     }
     
-    override var cellType: AnyClass {
+    override var cellType: CellType {
         return LocationCell.self
     }
 }

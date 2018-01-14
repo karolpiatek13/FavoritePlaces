@@ -22,7 +22,7 @@ class PlaceCellInteractor: BaseCellInteractor {
         cell.configure(interactor: self, place: place)
     }
     
-    override var cellType: AnyClass {
+    override var cellType: CellType {
         return PlaceCell.self
     }
 }

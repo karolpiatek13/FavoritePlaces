@@ -24,23 +24,13 @@ class LocationCell: UITableViewCell {
         guard let coordinate = coordinate else { return }
         let annotation = getAnnotation(coordinate: coordinate)
         mapView.addAnnotation(annotation)
+        setVisibleRegion(coordinate: coordinate)
     }
     
     func addTapRecognizer() {
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         gestureRecognizer.delegate = self
         mapView.addGestureRecognizer(gestureRecognizer)
-    }
-    
-    @objc func handleTap(_ gestureReconizer: UILongPressGestureRecognizer) {
-        let location = gestureReconizer.location(in: mapView)
-        let coordinate = mapView.convert(location,toCoordinateFrom: mapView)
-        let annotation = getAnnotation(coordinate: coordinate)
-        
-        mapView.removeAnnotations(mapView.annotations)
-        mapView.addAnnotation(annotation)
-        mapView.selectAnnotation(annotation, animated: true)
-        interactor?.coordinate = coordinate
     }
     
     func getAnnotation(coordinate: CLLocationCoordinate2D) -> MKPointAnnotation {
@@ -55,6 +45,22 @@ class LocationCell: UITableViewCell {
             annotation.subtitle = placeMark.locality
         })
         return annotation
+    }
+    
+    func setVisibleRegion(coordinate: CLLocationCoordinate2D) {
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(coordinate, 500, 500)
+        mapView.setRegion(coordinateRegion, animated: true)
+    }
+    
+    @objc func handleTap(_ gestureReconizer: UILongPressGestureRecognizer) {
+        let location = gestureReconizer.location(in: mapView)
+        let coordinate = mapView.convert(location,toCoordinateFrom: mapView)
+        let annotation = getAnnotation(coordinate: coordinate)
+        
+        mapView.removeAnnotations(mapView.annotations)
+        mapView.addAnnotation(annotation)
+        mapView.selectAnnotation(annotation, animated: true)
+        interactor?.coordinate = coordinate
     }
 }
 

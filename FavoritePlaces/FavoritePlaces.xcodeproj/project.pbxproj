@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0000FBED200A0B8C00D0AA55 /* FavoritePlaces.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0000FBEB200A0B8C00D0AA55 /* FavoritePlaces.xcdatamodeld */; };
+		0000FBEF200A24DC00D0AA55 /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000FBEE200A24DC00D0AA55 /* DataExtension.swift */; };
+		0000FBF1200A268D00D0AA55 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000FBF0200A268D00D0AA55 /* ArrayExtension.swift */; };
 		0031988D1FFFD43F00E17D89 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0031988C1FFFD43F00E17D89 /* UIViewControllerExtension.swift */; };
 		00364B2720010EF300C4696D /* FavoritePlacesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00364B2620010EF300C4696D /* FavoritePlacesListVC.swift */; };
 		00364B2A200225C000C4696D /* PlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00364B28200225C000C4696D /* PlaceCell.swift */; };
 		00364B2B200225C000C4696D /* PlaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00364B29200225C000C4696D /* PlaceCell.xib */; };
 		00364B2D2002437C00C4696D /* FavoritePlacesListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00364B2C2002437C00C4696D /* FavoritePlacesListInteractor.swift */; };
 		00364B2F2002460C00C4696D /* PlaceCellInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00364B2E2002460C00C4696D /* PlaceCellInteractor.swift */; };
-		00364B32200257A800C4696D /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00364B31200257A800C4696D /* DataBaseManager.swift */; };
-		00364B352002596600C4696D /* FavoritePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00364B342002596600C4696D /* FavoritePlace.swift */; };
 		004468C91FFBFEBE00326650 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004468C81FFBFEBE00326650 /* UITableViewExtension.swift */; };
 		004468D21FFBFFF700326650 /* AddFavoritePlaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004468D01FFBFFF700326650 /* AddFavoritePlaceVC.swift */; };
 		004468D51FFC00F200326650 /* AddFavoritePlaceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004468D41FFC00F200326650 /* AddFavoritePlaceInteractor.swift */; };
@@ -47,14 +48,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0000FBEC200A0B8C00D0AA55 /* FavoritePlaces.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavoritePlaces.xcdatamodel; sourceTree = "<group>"; };
+		0000FBEE200A24DC00D0AA55 /* DataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
+		0000FBF0200A268D00D0AA55 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		0031988C1FFFD43F00E17D89 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		00364B2620010EF300C4696D /* FavoritePlacesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePlacesListVC.swift; sourceTree = "<group>"; };
 		00364B28200225C000C4696D /* PlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCell.swift; sourceTree = "<group>"; };
 		00364B29200225C000C4696D /* PlaceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceCell.xib; sourceTree = "<group>"; };
 		00364B2C2002437C00C4696D /* FavoritePlacesListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePlacesListInteractor.swift; sourceTree = "<group>"; };
 		00364B2E2002460C00C4696D /* PlaceCellInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCellInteractor.swift; sourceTree = "<group>"; };
-		00364B31200257A800C4696D /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
-		00364B342002596600C4696D /* FavoritePlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePlace.swift; sourceTree = "<group>"; };
 		004468C81FFBFEBE00326650 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		004468D01FFBFFF700326650 /* AddFavoritePlaceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFavoritePlaceVC.swift; sourceTree = "<group>"; };
 		004468D41FFC00F200326650 /* AddFavoritePlaceInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFavoritePlaceInteractor.swift; sourceTree = "<group>"; };
@@ -100,22 +102,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00364B302002579500C4696D /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-				00364B31200257A800C4696D /* DataBaseManager.swift */,
-			);
-			path = Managers;
-			sourceTree = "<group>";
-		};
-		00364B332002595200C4696D /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				00364B342002596600C4696D /* FavoritePlace.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		004468C71FFBFE6200326650 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +111,7 @@
 				0047DFB420035EC10049A495 /* Constants.swift */,
 				00D90F2C1FFD3DE2008478EC /* Localizable.strings */,
 				00F51AE5200940B900AEFAB3 /* LaunchScreen.storyboard */,
+				0000FBEB200A0B8C00D0AA55 /* FavoritePlaces.xcdatamodeld */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -208,8 +195,6 @@
 		00CD757A1FEE6220001E6F96 /* FavoritePlaces */ = {
 			isa = PBXGroup;
 			children = (
-				00364B332002595200C4696D /* Models */,
-				00364B302002579500C4696D /* Managers */,
 				004468CC1FFBFF3D00326650 /* ViewControllers */,
 				004468CF1FFBFFA600326650 /* Cell ViewControllers */,
 				004468CE1FFBFF9E00326650 /* Interactors */,
@@ -237,6 +222,8 @@
 				00D90F2E1FFD3E5F008478EC /* StringExtension.swift */,
 				00D90F531FFF8FC5008478EC /* UIResponderExtension.swift */,
 				0031988C1FFFD43F00E17D89 /* UIViewControllerExtension.swift */,
+				0000FBEE200A24DC00D0AA55 /* DataExtension.swift */,
+				0000FBF0200A268D00D0AA55 /* ArrayExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -325,14 +312,15 @@
 				004468D51FFC00F200326650 /* AddFavoritePlaceInteractor.swift in Sources */,
 				00364B2F2002460C00C4696D /* PlaceCellInteractor.swift in Sources */,
 				00CD757C1FEE6220001E6F96 /* AppDelegate.swift in Sources */,
-				00364B352002596600C4696D /* FavoritePlace.swift in Sources */,
 				00364B2A200225C000C4696D /* PlaceCell.swift in Sources */,
 				00364B2720010EF300C4696D /* FavoritePlacesListVC.swift in Sources */,
 				004468F51FFC09F400326650 /* MainPhotoCellInteractor.swift in Sources */,
 				0047DFB520035EC10049A495 /* Constants.swift in Sources */,
+				0000FBEF200A24DC00D0AA55 /* DataExtension.swift in Sources */,
 				00D90F511FFF83F4008478EC /* GalleryCellInteractor.swift in Sources */,
 				00D90F321FFD62D9008478EC /* PlaceNameCell.swift in Sources */,
 				00D90F4E1FFF773A008478EC /* PhotoCell.swift in Sources */,
+				0000FBF1200A268D00D0AA55 /* ArrayExtension.swift in Sources */,
 				00F56E962000CC060011C630 /* LocationCell.swift in Sources */,
 				004468D21FFBFFF700326650 /* AddFavoritePlaceVC.swift in Sources */,
 				00D90F351FFD62F2008478EC /* PlaceNameCellInteractor.swift in Sources */,
@@ -340,8 +328,8 @@
 				00D90F2F1FFD3E5F008478EC /* StringExtension.swift in Sources */,
 				00F56E9B2000ECA50011C630 /* LocationCellInteractor.swift in Sources */,
 				004468F21FFC097A00326650 /* MainPhotoCell.swift in Sources */,
-				00364B32200257A800C4696D /* DataBaseManager.swift in Sources */,
 				004468C91FFBFEBE00326650 /* UITableViewExtension.swift in Sources */,
+				0000FBED200A0B8C00D0AA55 /* FavoritePlaces.xcdatamodeld in Sources */,
 				00364B2D2002437C00C4696D /* FavoritePlacesListInteractor.swift in Sources */,
 				00D90F411FFEBB1E008478EC /* DescriptionCellInteractor.swift in Sources */,
 				00D90F3E1FFEBAFB008478EC /* DescriptionCell.swift in Sources */,
@@ -529,6 +517,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0000FBEB200A0B8C00D0AA55 /* FavoritePlaces.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0000FBEC200A0B8C00D0AA55 /* FavoritePlaces.xcdatamodel */,
+			);
+			currentVersion = 0000FBEC200A0B8C00D0AA55 /* FavoritePlaces.xcdatamodel */;
+			path = FavoritePlaces.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 00CD75701FEE6220001E6F96 /* Project object */;
 }

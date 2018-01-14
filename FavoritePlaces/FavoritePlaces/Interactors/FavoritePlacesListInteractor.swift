@@ -6,24 +6,34 @@
 //  Copyright © 2018 KarolPiatek. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import MapKit
 
 protocol FavoritePlacesListProtocol {
     func getCellInteractor(for index:Int) -> BaseCellInteractor?
     func getNumberOfVisibleCells() -> Int
     func getData()
-    func deleteIntegrator(at index: Int)
-    func insertInteractor(placeInteractor: PlaceCellInteractor, at: Int)
+    func deleteIntegratorAndCoreData(at index: Int)
+    func changePosition(placeInteractor: PlaceCellInteractor, sourceIndex: Int, destinationIndex: Int)
 }
 
 class FavoritePlacesListInteractor: FavoritePlacesListProtocol {
-    
+
     var favoritePlacesInteractors: [PlaceCellInteractor] = []
+    var favoritePlaces: [FavoritePlace] = []
     
     func getData() {
-        favoritePlacesInteractors = []
-        for place in DataBaseManager.default.favoritePlaces {
-            favoritePlacesInteractors.append(PlaceCellInteractor(place: place))
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let context = appDelegate.persistentContainer.viewContext
+        do {
+            favoritePlaces = try context.fetch(FavoritePlace.fetchRequest())
+            favoritePlaces = favoritePlaces.sorted(by: { $0.position < $1.position })
+            favoritePlacesInteractors = []
+            for placeData in favoritePlaces {
+                favoritePlacesInteractors.append(PlaceCellInteractor(place: placeData))
+            }
+        } catch {
+            print("Fetching Failed")
         }
     }
     
@@ -35,11 +45,37 @@ class FavoritePlacesListInteractor: FavoritePlacesListProtocol {
         return favoritePlacesInteractors[index]
     }
     
-    func deleteIntegrator(at index: Int) {
+    func deleteIntegratorAndCoreData(at index: Int) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate,
+            let cellInteractor = getCellInteractor(for: index) as? PlaceCellInteractor else { return }
+        let context = appDelegate.persistentContainer.viewContext
+        context.delete(cellInteractor.place)
+        for (index, place) in favoritePlaces.enumerated() {
+            place.position = Int16(index)
+        }
         favoritePlacesInteractors.remove(at: index)
+        do {
+            try context.save()
+        } catch {
+            print("Moving Failed")
+        }
     }
     
-    func insertInteractor(placeInteractor: PlaceCellInteractor, at: Int) {
-        favoritePlacesInteractors.insert(placeInteractor, at: at)
+    func changePosition(placeInteractor: PlaceCellInteractor, sourceIndex: Int, destinationIndex: Int) {
+        let place = favoritePlaces[sourceIndex]
+        favoritePlaces.remove(at: sourceIndex)
+        favoritePlacesInteractors.remove(at: sourceIndex)
+        favoritePlaces.insert(place, at: destinationIndex)
+        favoritePlacesInteractors.insert(placeInteractor, at: destinationIndex)
+        for (index, place) in favoritePlaces.enumerated() {
+            place.position = Int16(index)
+        }
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let context = appDelegate.persistentContainer.viewContext
+        do {
+            try context.save()
+        } catch {
+            print("Moving Failed")
+        }
     }
 }

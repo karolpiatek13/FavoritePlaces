@@ -18,7 +18,7 @@ class PlaceCell: UITableViewCell {
     
     func configure(interactor: PlaceCellInteractor, place: FavoritePlace) {
         self.interactor = interactor
-        mainPhoto.image = place.mainPhoto
+        mainPhoto.image = place.mainPhoto?.toUIImage()
         nameLabel.text = place.placeName
         descriptionLabel.text = place.placeDescription
     }

@@ -6,7 +6,8 @@
 //  Copyright © 2018 KarolPiatek. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import MapKit
 
 protocol BaseTableInteractorProtocol {
     func getCellInteractor(for index:Int) -> BaseCellInteractor?
@@ -73,11 +74,29 @@ class AddFavoritePlaceInteractor: BaseTableInteractorProtocol, AddFavoritePlaceP
             let descriptionInteractor = cellInteractors[.description] as? DescriptionCellInteractor,
             let galleryInteractor = cellInteractors[.galleryCollection] as? GalleryCellInteractor,
             let locationInteractor = cellInteractors[.location] as? LocationCellInteractor,
-            let mainPhoto = mainPhotoInteractor.mainPhoto, !placeNameInteractor.value.isEmpty else { return false }
+            let mainPhoto = mainPhotoInteractor.mainPhoto, !placeNameInteractor.value.isEmpty,
+            let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return false }
         var gallery = galleryInteractor.gallery
         gallery.remove(at: Constants.galleryPlaceHolder)
-        let favPlace = FavoritePlace(mainPhoto: mainPhoto, placeName: placeNameInteractor.value, description: descriptionInteractor.value, gallery: gallery, location: locationInteractor.coordinate)
-        DataBaseManager.default.favoritePlaces.append(favPlace)
+
+        let context = appDelegate.persistentContainer.viewContext
+
+        let favoritePlace = FavoritePlace(context: context)
+        favoritePlace.placeName = placeNameInteractor.value
+        favoritePlace.mainPhoto = UIImagePNGRepresentation(mainPhoto)
+        favoritePlace.placeDescription = descriptionInteractor.value
+        favoritePlace.gallery = gallery.coreDataRepresentation()
+        favoritePlace.gegrLat = locationInteractor.coordinate?.latitude ?? -1.0
+        favoritePlace.gegrLon = locationInteractor.coordinate?.longitude ?? -1.0
+        
+        do {
+            let favoritePlaces = try context.fetch(FavoritePlace.fetchRequest())
+            favoritePlace.position = Int16(favoritePlaces.count)
+        } catch {
+            print("Fetching Failed")
+        }
+        
+        appDelegate.saveContext()
         
         return true
     }
@@ -86,11 +105,12 @@ class AddFavoritePlaceInteractor: BaseTableInteractorProtocol, AddFavoritePlaceP
         guard let descriptionInteractor = cellInteractors[.description] as? DescriptionCellInteractor,
             let place = place else { return }
         place.placeDescription = descriptionInteractor.value
-        DataBaseManager.default.favoritePlaces = DataBaseManager.default.favoritePlaces.map { dbPlace in
-            guard dbPlace.placeName != place.placeName else {
-                return place
-            }
-            return dbPlace
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let context = appDelegate.persistentContainer.viewContext
+        do {
+            try context.save()
+        } catch {
+            print("Fetching Failed")
         }
     }
     
@@ -102,16 +122,18 @@ class AddFavoritePlaceInteractor: BaseTableInteractorProtocol, AddFavoritePlaceP
             let locationInteractor = cellInteractors[.location] as? LocationCellInteractor else { return }
         self.place = place
         isEditable = false
-        mainPhotoInteractor.mainPhoto = place.mainPhoto
+        mainPhotoInteractor.mainPhoto = place.mainPhoto?.toUIImage()
         mainPhotoInteractor.isEditable = false
-        placeNameInteractor.value = place.placeName
+        placeNameInteractor.value = place.placeName ?? ""
         placeNameInteractor.isEditable = false
         descriptionInteractor.value = place.placeDescription
         descriptionInteractor.isEditable = false
-        galleryInteractor.gallery = place.gallery ?? []
+        galleryInteractor.gallery = place.gallery?.imageArray() ?? []
         galleryInteractor.isEditable = false
-        locationInteractor.coordinate = place.location
         locationInteractor.isEditable = false
+        if place.gegrLat > 0 && place.gegrLon > 0 {
+            locationInteractor.coordinate = CLLocationCoordinate2D(latitude: place.gegrLat, longitude: place.gegrLon)
+        }
     }
     
     func setDescriptionEditing(editing: Bool) {
