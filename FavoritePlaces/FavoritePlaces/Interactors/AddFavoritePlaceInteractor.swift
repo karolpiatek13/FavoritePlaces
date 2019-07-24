@@ -83,7 +83,7 @@ class AddFavoritePlaceInteractor: BaseTableInteractorProtocol, AddFavoritePlaceP
 
         let favoritePlace = FavoritePlace(context: context)
         favoritePlace.placeName = placeNameInteractor.value
-        favoritePlace.mainPhoto = UIImagePNGRepresentation(mainPhoto)
+        favoritePlace.mainPhoto = mainPhoto.pngData()
         favoritePlace.placeDescription = descriptionInteractor.value
         favoritePlace.gallery = gallery.coreDataRepresentation()
         favoritePlace.gegrLat = locationInteractor.coordinate?.latitude ?? -1.0
@@ -122,7 +122,7 @@ class AddFavoritePlaceInteractor: BaseTableInteractorProtocol, AddFavoritePlaceP
             let locationInteractor = cellInteractors[.location] as? LocationCellInteractor else { return }
         self.place = place
         isEditable = false
-        mainPhotoInteractor.mainPhoto = place.mainPhoto?.toUIImage()
+        mainPhotoInteractor.mainPhoto = place.mainPhoto?.uiimage
         mainPhotoInteractor.isEditable = false
         placeNameInteractor.value = place.placeName ?? ""
         placeNameInteractor.isEditable = false

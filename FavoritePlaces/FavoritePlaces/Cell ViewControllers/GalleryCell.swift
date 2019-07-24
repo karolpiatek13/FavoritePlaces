@@ -91,8 +91,9 @@ extension GalleryCell: UICollectionViewDelegate, UICollectionViewDataSource {
 
 extension GalleryCell: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        guard let chosenImage = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+
+        guard let chosenImage = info[.originalImage] as? UIImage else {
             picker.dismiss(animated: true, completion: nil)
             return
         }

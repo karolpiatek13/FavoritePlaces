@@ -48,7 +48,7 @@ class LocationCell: UITableViewCell {
     }
     
     func setVisibleRegion(coordinate: CLLocationCoordinate2D) {
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(coordinate, 500, 500)
+        let coordinateRegion = MKCoordinateRegion(center: coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
         mapView.setRegion(coordinateRegion, animated: true)
     }
     

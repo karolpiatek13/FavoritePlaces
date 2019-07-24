@@ -19,7 +19,7 @@ class AddFavoritePlaceVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         picker.delegate = self
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 128
         self.hideKeyboardWhenTappedAround()
         setNavigationBar()
@@ -122,12 +122,15 @@ class AddFavoritePlaceVC: UITableViewController {
 
 extension AddFavoritePlaceVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        guard let chosenImage = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        guard let chosenImage = info[.originalImage] as? UIImage else {
             picker.dismiss(animated: true, completion: nil)
             return
         }
+        
         guard let cellInteractor = interactor.getCellInteractor(for: AddFavoritePlaceInteractor.Cell.mainPhoto.rawValue) as? MainPhotoCellInteractor else { return }
+        
         cellInteractor.mainPhoto = chosenImage
         tableView.reloadData()
         picker.dismiss(animated: true, completion: nil)
