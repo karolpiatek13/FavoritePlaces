@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 protocol BaseTableInteractorProtocol {
-    func getCellInteractor(for index:Int) -> BaseCellInteractor?
+    func getCellInteractor(for index:Int) -> CellInteractorProtocol?
     func getNumberOfVisibleCells() -> Int
     func getCellEnum(index: Int) -> AddFavoritePlaceInteractor.Cell
 }
@@ -45,7 +45,7 @@ class AddFavoritePlaceInteractor: BaseTableInteractorProtocol, AddFavoritePlaceP
         .location,
     ]
     
-    var cellInteractors : [Cell:BaseCellInteractor] = [
+    var cellInteractors: [Cell:CellInteractorProtocol] = [
         .mainPhoto : MainPhotoCellInteractor(),
         .placeName : PlaceNameCellInteractor(title: "PlaceName".localized, value: "" ),
         .description : DescriptionCellInteractor(title: "Description".localized),
@@ -53,7 +53,7 @@ class AddFavoritePlaceInteractor: BaseTableInteractorProtocol, AddFavoritePlaceP
         .location : LocationCellInteractor(),
     ]
     
-    func getCellInteractor(for index:Int) -> BaseCellInteractor? {
+    func getCellInteractor(for index: Int) -> CellInteractorProtocol? {
         return cellInteractors[cellOrder[index]]
     }
     

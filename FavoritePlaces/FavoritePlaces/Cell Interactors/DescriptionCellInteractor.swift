@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DescriptionCellInteractor: BaseCellInteractor {
+class DescriptionCellInteractor: CellInteractorProtocol {
     
     var title: String
     var value: String?
@@ -16,15 +16,14 @@ class DescriptionCellInteractor: BaseCellInteractor {
     
     init(title: String) {
         self.title = title
-        super.init()
     }
     
-    override func configure(_ cell : UITableViewCell) {
+    func configure(_ cell: UITableViewCell) {
         guard let cell = cell as? DescriptionCell else { return }
         cell.configure(interactor: self, title: title, value: value ?? "", isEditable: isEditable)
     }
     
-    override var cellType: CellType {
+    var cellType: CellType {
         return DescriptionCell.self
     }
 }

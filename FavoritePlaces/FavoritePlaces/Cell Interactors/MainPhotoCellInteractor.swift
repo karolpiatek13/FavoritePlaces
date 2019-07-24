@@ -8,17 +8,19 @@
 
 import UIKit
 
-class MainPhotoCellInteractor: BaseCellInteractor {
+class MainPhotoCellInteractor: CellInteractorProtocol {
     
     var mainPhoto: UIImage?
     var isEditable = true
     
-    override var cellType: CellType {
-        return MainPhotoCell.self
+    func configure(_ cell: UITableViewCell) {
+        guard let cell = cell as? MainPhotoCell else { return }
+        cell.configure(interactor: self,
+                       mainPhoto: mainPhoto ?? UIImage(named: "photoPlaceHolder")!,
+                       isEditable: isEditable)
     }
     
-    override func configure(_ cell : UITableViewCell) {
-        guard let cell = cell as? MainPhotoCell else { return }
-        cell.configure(interactor: self, mainPhoto: mainPhoto ?? #imageLiteral(resourceName: "photoPlaceHolder"), isEditable: isEditable)
+    var cellType: CellType {
+        return MainPhotoCell.self
     }
 }

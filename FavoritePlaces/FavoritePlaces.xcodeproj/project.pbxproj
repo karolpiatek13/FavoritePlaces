@@ -19,7 +19,7 @@
 		004468C91FFBFEBE00326650 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004468C81FFBFEBE00326650 /* UITableViewExtension.swift */; };
 		004468D21FFBFFF700326650 /* AddFavoritePlaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004468D01FFBFFF700326650 /* AddFavoritePlaceVC.swift */; };
 		004468D51FFC00F200326650 /* AddFavoritePlaceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004468D41FFC00F200326650 /* AddFavoritePlaceInteractor.swift */; };
-		004468D71FFC013700326650 /* BaseCellInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004468D61FFC013700326650 /* BaseCellInteractor.swift */; };
+		004468D71FFC013700326650 /* CellInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004468D61FFC013700326650 /* CellInteractorProtocol.swift */; };
 		004468F21FFC097A00326650 /* MainPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004468F01FFC097A00326650 /* MainPhotoCell.swift */; };
 		004468F31FFC097A00326650 /* MainPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004468F11FFC097A00326650 /* MainPhotoCell.xib */; };
 		004468F51FFC09F400326650 /* MainPhotoCellInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004468F41FFC09F400326650 /* MainPhotoCellInteractor.swift */; };
@@ -60,7 +60,7 @@
 		004468C81FFBFEBE00326650 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		004468D01FFBFFF700326650 /* AddFavoritePlaceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFavoritePlaceVC.swift; sourceTree = "<group>"; };
 		004468D41FFC00F200326650 /* AddFavoritePlaceInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFavoritePlaceInteractor.swift; sourceTree = "<group>"; };
-		004468D61FFC013700326650 /* BaseCellInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCellInteractor.swift; sourceTree = "<group>"; };
+		004468D61FFC013700326650 /* CellInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellInteractorProtocol.swift; sourceTree = "<group>"; };
 		004468F01FFC097A00326650 /* MainPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPhotoCell.swift; sourceTree = "<group>"; };
 		004468F11FFC097A00326650 /* MainPhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainPhotoCell.xib; sourceTree = "<group>"; };
 		004468F41FFC09F400326650 /* MainPhotoCellInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPhotoCellInteractor.swift; sourceTree = "<group>"; };
@@ -142,7 +142,7 @@
 		004468CD1FFBFF8D00326650 /* Cell Interactors */ = {
 			isa = PBXGroup;
 			children = (
-				004468D61FFC013700326650 /* BaseCellInteractor.swift */,
+				004468D61FFC013700326650 /* CellInteractorProtocol.swift */,
 				004468F41FFC09F400326650 /* MainPhotoCellInteractor.swift */,
 				00D90F341FFD62F2008478EC /* PlaceNameCellInteractor.swift */,
 				00D90F401FFEBB1E008478EC /* DescriptionCellInteractor.swift */,
@@ -336,7 +336,7 @@
 				00D90F3E1FFEBAFB008478EC /* DescriptionCell.swift in Sources */,
 				0031988D1FFFD43F00E17D89 /* UIViewControllerExtension.swift in Sources */,
 				00D90F541FFF8FC5008478EC /* UIResponderExtension.swift in Sources */,
-				004468D71FFC013700326650 /* BaseCellInteractor.swift in Sources */,
+				004468D71FFC013700326650 /* CellInteractorProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,7 +406,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -460,7 +460,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
