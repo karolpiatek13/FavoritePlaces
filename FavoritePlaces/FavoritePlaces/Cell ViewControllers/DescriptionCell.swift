@@ -10,15 +10,14 @@ import UIKit
 
 class DescriptionCell: UITableViewCell {
 
-    @IBOutlet weak var descriptionTitleLabel: UILabel!
+    @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
-    @IBOutlet weak var placeholderLabel: UILabel!
     
     var interactor: DescriptionCellInteractor?
     
     func configure(interactor: DescriptionCellInteractor, title: String, value: String, isEditable: Bool) {
         self.interactor = interactor
-        descriptionTitleLabel.text = title
+        titleLabel.text = title
         textView.text = value
         isUserInteractionEnabled = isEditable
         textView.layer.borderWidth = 1

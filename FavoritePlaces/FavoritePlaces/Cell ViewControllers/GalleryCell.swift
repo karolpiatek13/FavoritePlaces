@@ -11,7 +11,7 @@ import AVKit
 
 class GalleryCell: UITableViewCell {
 
-    @IBOutlet weak var galleryTitleLabel: UILabel!
+    @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var collectionView: UICollectionView!
     
     fileprivate let picker = UIImagePickerController()
