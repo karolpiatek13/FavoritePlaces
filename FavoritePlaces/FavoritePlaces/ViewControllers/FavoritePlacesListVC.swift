@@ -30,7 +30,8 @@ class FavoritePlacesListVC: UIViewController {
     }
     
     override func setEditing(_ editing: Bool, animated: Bool) {
-        if(editing && !tableView.isEditing){
+        
+        if editing && !tableView.isEditing {
             tableView.setEditing(true, animated: true)
             editButtonItem.title = "Done".localized
         }else{
