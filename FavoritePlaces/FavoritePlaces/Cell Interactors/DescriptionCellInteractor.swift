@@ -23,7 +23,5 @@ class DescriptionCellInteractor: CellInteractorProtocol {
         cell.configure(interactor: self, title: title, value: value ?? "", isEditable: isEditable)
     }
     
-    var cellType: CellType {
-        return DescriptionCell.self
-    }
+    var cellType: CellType { return DescriptionCell.self }
 }
