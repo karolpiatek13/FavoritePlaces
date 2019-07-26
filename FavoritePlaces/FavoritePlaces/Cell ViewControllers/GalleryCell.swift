@@ -11,8 +11,8 @@ import AVKit
 
 class GalleryCell: UITableViewCell {
 
-    @IBOutlet weak var galleryCollectionView: UICollectionView!
     @IBOutlet weak var galleryTitleLabel: UILabel!
+    @IBOutlet private weak var collectionView: UICollectionView!
     
     fileprivate let picker = UIImagePickerController()
     
@@ -21,9 +21,9 @@ class GalleryCell: UITableViewCell {
     func configure(interactor: GalleryCellInteractor, gallery: [UIImage]) {
         self.interactor = interactor
         picker.delegate = self
-        galleryCollectionView.delegate = self
-        galleryCollectionView.dataSource = self
-        galleryCollectionView.register(UINib(nibName: PhotoCell.typeName, bundle: nil), forCellWithReuseIdentifier: PhotoCell.typeName)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(UINib(nibName: PhotoCell.typeName, bundle: nil), forCellWithReuseIdentifier: PhotoCell.typeName)
     }
 }
 
@@ -99,7 +99,7 @@ extension GalleryCell: UIImagePickerControllerDelegate, UINavigationControllerDe
         }
         
         interactor?.gallery.append(chosenImage)
-        galleryCollectionView.reloadData()
+        collectionView.reloadData()
         picker.dismiss(animated: true, completion: nil)
     }
     
