@@ -10,8 +10,8 @@ import UIKit
 
 class FavoritePlacesListVC: UIViewController {
 
-    @IBOutlet weak var searchTextField: UITextField!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var searchTextField: UITextField!
+    @IBOutlet private weak var tableView: UITableView!
     
     var interactor: FavoritePlacesListProtocol = FavoritePlacesListInteractor()
     
@@ -37,7 +37,7 @@ class FavoritePlacesListVC: UIViewController {
             editButtonItem.title = "Done".localized
         } else {
             tableView.setEditing(false, animated: true)
-             editButtonItem.title = "Edit".localized
+            editButtonItem.title = "Edit".localized
         }
     }
     
