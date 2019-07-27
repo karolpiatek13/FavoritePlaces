@@ -17,9 +17,10 @@ class FavoritePlacesListVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.leftBarButtonItem = editButtonItem
+        navigationItem.leftBarButtonItem = editButtonItem
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 90
+        configureUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,10 +35,15 @@ class FavoritePlacesListVC: UIViewController {
         if editing && !tableView.isEditing {
             tableView.setEditing(true, animated: true)
             editButtonItem.title = "Done".localized
-        }else{
+        } else {
             tableView.setEditing(false, animated: true)
              editButtonItem.title = "Edit".localized
         }
+    }
+    
+    private func configureUI() {
+        view.backgroundColor = Constants.backgroundColor
+        tableView.backgroundColor = Constants.backgroundColor
     }
 }
 
