@@ -6,8 +6,9 @@
 //  Copyright © 2018 KarolPiatek. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct Constants {
     static let animateDuration = 0.5
+    static let backgroundColor = UIColor(hexValue: 0xf5f5f3)
 }
