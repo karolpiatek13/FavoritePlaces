@@ -6,45 +6,22 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Favorite Places ListVC-->
-        <scene sceneID="r3A-6Q-s8x">
+        <scene sceneID="WR9-h3-hQI">
             <objects>
-                <viewController id="o7B-Ks-FbE" customClass="FavoritePlacesListVC" customModule="FavoritePlaces" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mfM-bA-6oI">
+                <tableViewController id="7ai-Yl-Odb" customClass="FavoritePlacesListVC" customModule="FavoritePlaces" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rR7-UV-ymY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Zg-2a-Xad">
-                                <rect key="frame" x="16" y="72" width="343" height="17"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bSE-oS-Cso">
-                                <rect key="frame" x="0.0" y="97" width="375" height="570"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="o7B-Ks-FbE" id="HcV-dv-6Vg"/>
-                                    <outlet property="delegate" destination="o7B-Ks-FbE" id="65B-u9-obK"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="bSE-oS-Cso" firstAttribute="top" secondItem="1Zg-2a-Xad" secondAttribute="bottom" constant="8" id="3kv-uz-rZB"/>
-                            <constraint firstItem="1Zg-2a-Xad" firstAttribute="top" secondItem="i2N-3t-3nS" secondAttribute="top" constant="8" id="8GB-EB-cco"/>
-                            <constraint firstItem="1Zg-2a-Xad" firstAttribute="leading" secondItem="i2N-3t-3nS" secondAttribute="leading" constant="16" id="WLE-RX-zXa"/>
-                            <constraint firstItem="i2N-3t-3nS" firstAttribute="trailing" secondItem="1Zg-2a-Xad" secondAttribute="trailing" constant="16" id="Yd7-5m-cPP"/>
-                            <constraint firstItem="bSE-oS-Cso" firstAttribute="leading" secondItem="i2N-3t-3nS" secondAttribute="leading" id="dQb-QO-Tgc"/>
-                            <constraint firstItem="i2N-3t-3nS" firstAttribute="bottom" secondItem="bSE-oS-Cso" secondAttribute="bottom" id="dWg-dM-tUu"/>
-                            <constraint firstItem="i2N-3t-3nS" firstAttribute="trailing" secondItem="bSE-oS-Cso" secondAttribute="trailing" id="hb5-ZH-DzR"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="i2N-3t-3nS"/>
-                    </view>
+                        <connections>
+                            <outlet property="dataSource" destination="7ai-Yl-Odb" id="4xk-QO-hh3"/>
+                            <outlet property="delegate" destination="7ai-Yl-Odb" id="NGz-0o-fd3"/>
+                        </connections>
+                    </tableView>
                     <navigationItem key="navigationItem" id="E14-sC-s5m">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="IcC-Bh-cfv">
                             <connections>
@@ -52,14 +29,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="searchTextField" destination="1Zg-2a-Xad" id="Ohg-qI-wCl"/>
-                        <outlet property="tableView" destination="bSE-oS-Cso" id="8JZ-Ya-L5D"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ppF-y7-iA5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="07X-ps-Vai" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18" y="-1030"/>
+            <point key="canvasLocation" x="6" y="-1030"/>
         </scene>
         <!--Add Favorite PlaceVC-->
         <scene sceneID="PW5-9x-XuV">
@@ -104,7 +77,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="o7B-Ks-FbE" kind="relationship" relationship="rootViewController" id="tNM-It-6qz"/>
+                        <segue destination="7ai-Yl-Odb" kind="relationship" relationship="rootViewController" id="tNM-It-6qz"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ggL-aj-S3D" userLabel="First Responder" sceneMemberID="firstResponder"/>
