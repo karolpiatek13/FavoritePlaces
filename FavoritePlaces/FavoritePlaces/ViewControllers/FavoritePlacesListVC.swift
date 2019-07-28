@@ -25,7 +25,7 @@ class FavoritePlacesListVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        title = "FavoritePlacesList.NavBar.Title".localized
+        localized()
         interactor.getData()
         tableView.reloadData()
     }
@@ -44,6 +44,11 @@ class FavoritePlacesListVC: UIViewController {
     private func configureUI() {
         view.backgroundColor = Constants.backgroundColor
         tableView.backgroundColor = Constants.backgroundColor
+    }
+    
+    private func localized() {
+        title = "FavoritePlacesList.NavBar.Title".localized
+        searchTextField.placeholder = "FavoritePlacesList.Search.Title".localized
     }
 }
 
