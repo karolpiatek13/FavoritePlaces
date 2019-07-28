@@ -45,6 +45,7 @@
 		00F56E9B2000ECA50011C630 /* LocationCellInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F56E9A2000ECA50011C630 /* LocationCellInteractor.swift */; };
 		00F56EBB2000FC060011C630 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00F56EBA2000FC060011C630 /* Main.storyboard */; };
 		5E9E73B822ECCED200F049F8 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9E73B722ECCED200F049F8 /* UIColor+Hex.swift */; };
+		5E9E73BA22ED8D1300F049F8 /* StartNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9E73B922ED8D1300F049F8 /* StartNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +90,7 @@
 		00F56E9A2000ECA50011C630 /* LocationCellInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCellInteractor.swift; sourceTree = "<group>"; };
 		00F56EBA2000FC060011C630 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5E9E73B722ECCED200F049F8 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		5E9E73B922ED8D1300F049F8 /* StartNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 			children = (
 				004468D01FFBFFF700326650 /* AddFavoritePlaceVC.swift */,
 				00364B2620010EF300C4696D /* FavoritePlacesListVC.swift */,
+				5E9E73B922ED8D1300F049F8 /* StartNavigationController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				004468D51FFC00F200326650 /* AddFavoritePlaceInteractor.swift in Sources */,
+				5E9E73BA22ED8D1300F049F8 /* StartNavigationController.swift in Sources */,
 				00364B2F2002460C00C4696D /* PlaceCellInteractor.swift in Sources */,
 				00CD757C1FEE6220001E6F96 /* AppDelegate.swift in Sources */,
 				00364B2A200225C000C4696D /* PlaceCell.swift in Sources */,
