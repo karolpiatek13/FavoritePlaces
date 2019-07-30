@@ -18,7 +18,7 @@ class FavoritePlacesListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem = editButtonItem
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 90
     }
     
@@ -60,7 +60,7 @@ extension FavoritePlacesListVC: UITableViewDataSource, UITableViewDelegate {
         return true
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle:   UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle:   UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
             interactor.deleteIntegratorAndCoreData(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .middle)

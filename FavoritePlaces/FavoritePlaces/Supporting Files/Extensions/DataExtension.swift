@@ -10,20 +10,16 @@ import UIKit
 
 extension Data {
     
-    func toUIImage() -> UIImage? {
-        return UIImage(data: self)
-    }
+    var uiimage: UIImage? { return UIImage(data: self) }
     
     func imageArray() -> [UIImage]? {
-        if let mySavedData = NSKeyedUnarchiver.unarchiveObject(with: self) as? NSArray {
-            let imgArray = mySavedData.flatMap({
-                return UIImage(data: $0 as! Data)
-            })
-            return imgArray
+        
+        guard let mySavedData = NSKeyedUnarchiver.unarchiveObject(with: self) as? NSArray
+            else {
+                print("Unable to convert data to ImageArray")
+                return nil
         }
-        else {
-            print("Unable to convert data to ImageArray")
-            return nil
-        }
+        
+        return mySavedData.compactMap { UIImage(data: $0 as! Data) }
     }
 }

@@ -14,7 +14,7 @@ extension Array where Element: UIImage {
         let CDataArray = NSMutableArray()
         
         for img in self {
-            guard let imageRepresentation = UIImagePNGRepresentation(img) else {
+            guard let imageRepresentation = img.pngData() else {
                 print("Unable to represent image as PNG")
                 return nil
             }
