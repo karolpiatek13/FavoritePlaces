@@ -63,6 +63,13 @@ class FavoritePlacesListVC: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .middle)
         }
     }
+
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        cell.layer.rounded(cornerRadius: 16,
+                           cellInsets: UIEdgeInsets(top: 4, left: 16, bottom: 4, right: 16),
+                           bounds: cell.bounds)
+    }
     
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         guard let movedObject = interactor.getCellInteractor(for: sourceIndexPath.row) as? PlaceCellInteractor else { return }
