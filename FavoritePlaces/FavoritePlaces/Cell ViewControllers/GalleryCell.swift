@@ -97,6 +97,7 @@ extension GalleryCell: UIImagePickerControllerDelegate, UINavigationControllerDe
             picker.dismiss(animated: true, completion: nil)
             return
         }
+        
         interactor?.gallery.append(chosenImage)
         galleryCollectionView.reloadData()
         picker.dismiss(animated: true, completion: nil)

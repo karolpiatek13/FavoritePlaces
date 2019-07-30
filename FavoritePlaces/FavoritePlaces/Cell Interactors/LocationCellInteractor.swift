@@ -9,17 +9,17 @@
 import UIKit
 import MapKit
 
-class LocationCellInteractor: BaseCellInteractor {
+class LocationCellInteractor: CellInteractorProtocol {
     
     var coordinate: CLLocationCoordinate2D?
     var isEditable = true
     
-    override func configure(_ cell : UITableViewCell) {
+    func configure(_ cell: UITableViewCell) {
         guard let cell = cell as? LocationCell else { return }
         cell.configure(interactor: self, coordinate: coordinate)
     }
     
-    override var cellType: CellType {
+    var cellType: CellType {
         return LocationCell.self
     }
 }

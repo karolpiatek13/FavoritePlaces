@@ -25,7 +25,7 @@ class PlaceCell: UITableViewCell {
     
     @IBAction func detailsButtonTapped(_ sender: UIButton) {
         guard let place = interactor?.place else { return }
-        let vc : AddFavoritePlaceVC = AddFavoritePlaceVC()
+        let vc: AddFavoritePlaceVC = AddFavoritePlaceVC()
         vc.interactor.setValues(place: place)
         interactor?.delegate?.navigationController?.pushViewController(vc, animated: true)
     }

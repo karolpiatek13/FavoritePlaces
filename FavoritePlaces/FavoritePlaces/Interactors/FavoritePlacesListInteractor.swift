@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 protocol FavoritePlacesListProtocol {
-    func getCellInteractor(for index:Int) -> BaseCellInteractor?
+    func getCellInteractor(for index: Int) -> CellInteractorProtocol?
     func getNumberOfVisibleCells() -> Int
     func getData()
     func deleteIntegratorAndCoreData(at index: Int)
@@ -41,7 +41,7 @@ class FavoritePlacesListInteractor: FavoritePlacesListProtocol {
         return favoritePlacesInteractors.count
     }
     
-    func getCellInteractor(for index:Int) -> BaseCellInteractor? {
+    func getCellInteractor(for index: Int) -> CellInteractorProtocol? {
         return favoritePlacesInteractors[index]
     }
     

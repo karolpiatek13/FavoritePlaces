@@ -12,7 +12,7 @@ class MainPhotoCell: UITableViewCell {
 
     @IBOutlet weak var mainPhoto: UIImageView!
     
-    var interactor : MainPhotoCellInteractor?
+    var interactor: MainPhotoCellInteractor?
     
     func configure(interactor: MainPhotoCellInteractor, mainPhoto: UIImage, isEditable: Bool) {
         self.interactor = interactor

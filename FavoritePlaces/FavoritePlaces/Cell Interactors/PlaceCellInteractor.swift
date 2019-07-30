@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlaceCellInteractor: BaseCellInteractor {
+class PlaceCellInteractor: CellInteractorProtocol {
     
     var place: FavoritePlace
     var delegate: FavoritePlacesListVC?
@@ -17,12 +17,12 @@ class PlaceCellInteractor: BaseCellInteractor {
         self.place = place
     }
     
-    override func configure(_ cell : UITableViewCell) {
+    func configure(_ cell: UITableViewCell) {
         guard let cell = cell as? PlaceCell else { return }
         cell.configure(interactor: self, place: place)
     }
     
-    override var cellType: CellType {
+    var cellType: CellType {
         return PlaceCell.self
     }
 }
