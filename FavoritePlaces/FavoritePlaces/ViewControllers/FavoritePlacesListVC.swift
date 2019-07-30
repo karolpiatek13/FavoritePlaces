@@ -8,68 +8,64 @@
 
 import UIKit
 
-class FavoritePlacesListVC: UIViewController {
+class FavoritePlacesListVC: UITableViewController {
 
-    @IBOutlet weak var searchTextField: UITextField!
-    @IBOutlet weak var tableView: UITableView!
-    
-    var interactor: FavoritePlacesListProtocol = FavoritePlacesListInteractor()
+    private let interactor: FavoritePlacesListProtocol = FavoritePlacesListInteractor()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.leftBarButtonItem = editButtonItem
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 90
+        configureTableView()
+        configureUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        title = "FavoritePlacesList.NavBar.Title".localized
-        interactor.getData()
+        interactor.refreshData()
         tableView.reloadData()
     }
     
-    override func setEditing(_ editing: Bool, animated: Bool) {
-        
-        if editing && !tableView.isEditing {
-            tableView.setEditing(true, animated: true)
-            editButtonItem.title = "Done".localized
-        }else{
-            tableView.setEditing(false, animated: true)
-             editButtonItem.title = "Edit".localized
-        }
-    }
-}
-
-extension FavoritePlacesListVC: UITableViewDataSource, UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return interactor.getNumberOfVisibleCells()
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return interactor.numberOfCells
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cellInteractor = interactor.getCellInteractor(for: indexPath.row) as? PlaceCellInteractor else {
-            return UITableViewCell()
-        }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellInteractor = interactor.favoritePlacesInteractors[indexPath.row]
         let cellView = tableView.getReusableCellSafe(cellType: cellInteractor.cellType)
         cellInteractor.configure(cellView)
         cellInteractor.delegate = self
         return cellView
     }
     
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let place = interactor.favoritePlacesInteractors[indexPath.row].place
+        let vc: AddFavoritePlaceVC = AddFavoritePlaceVC()
+        vc.interactor.setValues(place: place)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle:   UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if (editingStyle == .delete) {
-            interactor.deleteIntegratorAndCoreData(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .middle)
-        }
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        cell.layer.rounded(cornerRadius: 16,
+                           cellInsets: UIEdgeInsets(top: 4, left: 16, bottom: 4, right: 16),
+                           bounds: cell.bounds)
     }
     
-    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        guard let movedObject = interactor.getCellInteractor(for: sourceIndexPath.row) as? PlaceCellInteractor else { return }
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let movedObject = interactor.favoritePlacesInteractors[sourceIndexPath.row]
         interactor.changePosition(placeInteractor: movedObject, sourceIndex: sourceIndexPath.row, destinationIndex: destinationIndexPath.row)
+    }
+    
+    // MARK: - Private
+    
+    private func configureUI() {
+        view.backgroundColor = Constants.backgroundColor
+        tableView.backgroundColor = Constants.backgroundColor
+        title = "FavoritePlacesList.NavBar.Title".localized
+    }
+    
+    private func configureTableView() {
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 90
+        tableView.separatorStyle = .none
     }
 }

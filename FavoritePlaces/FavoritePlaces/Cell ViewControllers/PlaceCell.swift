@@ -22,11 +22,4 @@ class PlaceCell: UITableViewCell {
         nameLabel.text = place.placeName
         descriptionLabel.text = place.placeDescription
     }
-    
-    @IBAction func detailsButtonTapped(_ sender: UIButton) {
-        guard let place = interactor?.place else { return }
-        let vc: AddFavoritePlaceVC = AddFavoritePlaceVC()
-        vc.interactor.setValues(place: place)
-        interactor?.delegate?.navigationController?.pushViewController(vc, animated: true)
-    }
 }

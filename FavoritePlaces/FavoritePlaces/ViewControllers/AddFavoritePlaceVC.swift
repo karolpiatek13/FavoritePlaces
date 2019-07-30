@@ -26,11 +26,15 @@ class AddFavoritePlaceVC: UITableViewController {
     }
     
     func setNavigationBar() {
+        navigationItem.largeTitleDisplayMode = .never
         guard navigationItem.rightBarButtonItems == nil else {
             title = "AddFavoritePlace.NavBar.Title".localized
             return
         }
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(setEditable))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit".localized,
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(setEditable))
         title = "FavoritePlace.NavBar.Title".localized
     }
     

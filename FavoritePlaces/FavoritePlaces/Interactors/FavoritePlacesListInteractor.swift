@@ -10,9 +10,9 @@ import UIKit
 import MapKit
 
 protocol FavoritePlacesListProtocol {
-    func getCellInteractor(for index: Int) -> CellInteractorProtocol?
-    func getNumberOfVisibleCells() -> Int
-    func getData()
+    var favoritePlacesInteractors: [PlaceCellInteractor] { get }
+    var numberOfCells: Int { get }
+    func refreshData()
     func deleteIntegratorAndCoreData(at index: Int)
     func changePosition(placeInteractor: PlaceCellInteractor, sourceIndex: Int, destinationIndex: Int)
 }
@@ -22,8 +22,13 @@ class FavoritePlacesListInteractor: FavoritePlacesListProtocol {
     var favoritePlacesInteractors: [PlaceCellInteractor] = []
     var favoritePlaces: [FavoritePlace] = []
     
-    func getData() {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+    var numberOfCells: Int {
+        return favoritePlacesInteractors.count
+    }
+    
+    func refreshData(){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate
+            else { return }
         let context = appDelegate.persistentContainer.viewContext
         do {
             favoritePlaces = try context.fetch(FavoritePlace.fetchRequest())
@@ -37,17 +42,10 @@ class FavoritePlacesListInteractor: FavoritePlacesListProtocol {
         }
     }
     
-    func getNumberOfVisibleCells() -> Int {
-        return favoritePlacesInteractors.count
-    }
-    
-    func getCellInteractor(for index: Int) -> CellInteractorProtocol? {
-        return favoritePlacesInteractors[index]
-    }
-    
     func deleteIntegratorAndCoreData(at index: Int) {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate,
-            let cellInteractor = getCellInteractor(for: index) as? PlaceCellInteractor else { return }
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate
+             else { return }
+        let cellInteractor = favoritePlacesInteractors[index]
         let context = appDelegate.persistentContainer.viewContext
         context.delete(cellInteractor.place)
         for (index, place) in favoritePlaces.enumerated() {
@@ -57,7 +55,7 @@ class FavoritePlacesListInteractor: FavoritePlacesListProtocol {
         do {
             try context.save()
         } catch {
-            print("Moving Failed")
+            print("Deleting Failed")
         }
     }
     

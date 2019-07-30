@@ -44,6 +44,9 @@
 		00F56E972000CC060011C630 /* LocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00F56E952000CC060011C630 /* LocationCell.xib */; };
 		00F56E9B2000ECA50011C630 /* LocationCellInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F56E9A2000ECA50011C630 /* LocationCellInteractor.swift */; };
 		00F56EBB2000FC060011C630 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00F56EBA2000FC060011C630 /* Main.storyboard */; };
+		5E37D52122EF588600FCCE6D /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E37D52022EF588600FCCE6D /* CALayerExtension.swift */; };
+		5E9E73B822ECCED200F049F8 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9E73B722ECCED200F049F8 /* UIColor+Hex.swift */; };
+		5E9E73BA22ED8D1300F049F8 /* StartNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9E73B922ED8D1300F049F8 /* StartNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +90,9 @@
 		00F56E952000CC060011C630 /* LocationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationCell.xib; sourceTree = "<group>"; };
 		00F56E9A2000ECA50011C630 /* LocationCellInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCellInteractor.swift; sourceTree = "<group>"; };
 		00F56EBA2000FC060011C630 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		5E37D52022EF588600FCCE6D /* CALayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
+		5E9E73B722ECCED200F049F8 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		5E9E73B922ED8D1300F049F8 /* StartNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +138,7 @@
 			children = (
 				004468D01FFBFFF700326650 /* AddFavoritePlaceVC.swift */,
 				00364B2620010EF300C4696D /* FavoritePlacesListVC.swift */,
+				5E9E73B922ED8D1300F049F8 /* StartNavigationController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -221,6 +228,8 @@
 				0031988C1FFFD43F00E17D89 /* UIViewControllerExtension.swift */,
 				0000FBEE200A24DC00D0AA55 /* DataExtension.swift */,
 				0000FBF0200A268D00D0AA55 /* ArrayExtension.swift */,
+				5E9E73B722ECCED200F049F8 /* UIColor+Hex.swift */,
+				5E37D52022EF588600FCCE6D /* CALayerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -307,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				004468D51FFC00F200326650 /* AddFavoritePlaceInteractor.swift in Sources */,
+				5E9E73BA22ED8D1300F049F8 /* StartNavigationController.swift in Sources */,
 				00364B2F2002460C00C4696D /* PlaceCellInteractor.swift in Sources */,
 				00CD757C1FEE6220001E6F96 /* AppDelegate.swift in Sources */,
 				00364B2A200225C000C4696D /* PlaceCell.swift in Sources */,
@@ -320,6 +330,7 @@
 				0000FBF1200A268D00D0AA55 /* ArrayExtension.swift in Sources */,
 				00F56E962000CC060011C630 /* LocationCell.swift in Sources */,
 				004468D21FFBFFF700326650 /* AddFavoritePlaceVC.swift in Sources */,
+				5E37D52122EF588600FCCE6D /* CALayerExtension.swift in Sources */,
 				00D90F351FFD62F2008478EC /* PlaceNameCellInteractor.swift in Sources */,
 				00D90F4A1FFF7648008478EC /* GalleryCell.swift in Sources */,
 				00D90F2F1FFD3E5F008478EC /* StringExtension.swift in Sources */,
@@ -327,6 +338,7 @@
 				004468F21FFC097A00326650 /* MainPhotoCell.swift in Sources */,
 				004468C91FFBFEBE00326650 /* UITableViewExtension.swift in Sources */,
 				0000FBED200A0B8C00D0AA55 /* FavoritePlaces.xcdatamodeld in Sources */,
+				5E9E73B822ECCED200F049F8 /* UIColor+Hex.swift in Sources */,
 				00364B2D2002437C00C4696D /* FavoritePlacesListInteractor.swift in Sources */,
 				00D90F411FFEBB1E008478EC /* DescriptionCellInteractor.swift in Sources */,
 				00D90F3E1FFEBAFB008478EC /* DescriptionCell.swift in Sources */,
