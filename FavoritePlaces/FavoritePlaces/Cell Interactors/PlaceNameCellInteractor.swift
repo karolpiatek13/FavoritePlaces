@@ -24,7 +24,5 @@ class PlaceNameCellInteractor: CellInteractorProtocol {
         cell.configure(interactor: self, title: title, value: value, isEditable: isEditable)
     }
     
-    var cellType: CellType {
-        return PlaceNameCell.self
-    }
+    var cellType: CellType { return PlaceNameCell.self }
 }

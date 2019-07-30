@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,29 +30,20 @@
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
-                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="placeholder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyR-5d-gPL">
-                        <rect key="frame" x="21" y="63.5" width="76.5" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="5eP-jW-jab" firstAttribute="top" secondItem="3kz-oB-5tu" secondAttribute="bottom" constant="16" id="AIk-YX-gb3"/>
                     <constraint firstItem="5eP-jW-jab" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="E0s-ii-ej0"/>
                     <constraint firstItem="3kz-oB-5tu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="H87-yi-eAS"/>
-                    <constraint firstItem="iyR-5d-gPL" firstAttribute="top" secondItem="3kz-oB-5tu" secondAttribute="bottom" constant="24" id="aIl-A9-Gd3"/>
                     <constraint firstItem="3kz-oB-5tu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="2" id="cyN-iz-SHZ"/>
                     <constraint firstAttribute="trailingMargin" secondItem="5eP-jW-jab" secondAttribute="trailing" id="n3f-zl-aqj"/>
                     <constraint firstAttribute="bottomMargin" secondItem="5eP-jW-jab" secondAttribute="bottom" constant="12" id="xdl-G5-Ar0"/>
-                    <constraint firstItem="iyR-5d-gPL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="yqd-jf-2im"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="descriptionTitleLabel" destination="3kz-oB-5tu" id="Pdd-K4-pyY"/>
-                <outlet property="placeholderLabel" destination="iyR-5d-gPL" id="NWX-5l-rsc"/>
                 <outlet property="textView" destination="5eP-jW-jab" id="a9g-it-yEr"/>
+                <outlet property="titleLabel" destination="3kz-oB-5tu" id="Pdd-K4-pyY"/>
             </connections>
             <point key="canvasLocation" x="64" y="139.5"/>
         </tableViewCell>

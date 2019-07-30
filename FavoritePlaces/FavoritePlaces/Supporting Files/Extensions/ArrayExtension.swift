@@ -11,17 +11,17 @@ import UIKit
 extension Array where Element: UIImage {
 
     func coreDataRepresentation() -> Data? {
-        let CDataArray = NSMutableArray()
+        let coreDataArray = NSMutableArray()
         
         for img in self {
             guard let imageRepresentation = img.pngData() else {
                 print("Unable to represent image as PNG")
                 return nil
             }
-            let data : NSData = NSData(data: imageRepresentation)
-            CDataArray.add(data)
+            let data: NSData = NSData(data: imageRepresentation)
+            coreDataArray.add(data)
         }
         
-        return NSKeyedArchiver.archivedData(withRootObject: CDataArray)
+        return NSKeyedArchiver.archivedData(withRootObject: coreDataArray)
     }
 }

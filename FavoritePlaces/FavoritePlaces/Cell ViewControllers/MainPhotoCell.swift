@@ -10,7 +10,7 @@ import UIKit
 
 class MainPhotoCell: UITableViewCell {
 
-    @IBOutlet weak var mainPhoto: UIImageView!
+    @IBOutlet private weak var mainPhoto: UIImageView!
     
     var interactor: MainPhotoCellInteractor?
     

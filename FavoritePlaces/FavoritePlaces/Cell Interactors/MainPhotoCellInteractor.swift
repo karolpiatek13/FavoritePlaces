@@ -20,7 +20,5 @@ class MainPhotoCellInteractor: CellInteractorProtocol {
                        isEditable: isEditable)
     }
     
-    var cellType: CellType {
-        return MainPhotoCell.self
-    }
+    var cellType: CellType { return MainPhotoCell.self }
 }

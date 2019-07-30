@@ -10,9 +10,9 @@ import UIKit
 
 class PlaceCell: UITableViewCell {
 
-    @IBOutlet weak var mainPhoto: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var mainPhoto: UIImageView!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var descriptionLabel: UILabel!
     
     var interactor: PlaceCellInteractor?
     

@@ -9,6 +9,8 @@
 import UIKit
 import MapKit
 
+private let galleryPlaceHolderIndex: Int = 0
+
 protocol BaseTableInteractorProtocol {
     func getCellInteractor(for index:Int) -> CellInteractorProtocol?
     func getNumberOfVisibleCells() -> Int
@@ -45,12 +47,12 @@ class AddFavoritePlaceInteractor: BaseTableInteractorProtocol, AddFavoritePlaceP
         .location,
     ]
     
-    var cellInteractors: [Cell:CellInteractorProtocol] = [
-        .mainPhoto : MainPhotoCellInteractor(),
-        .placeName : PlaceNameCellInteractor(title: "PlaceName".localized, value: "" ),
-        .description : DescriptionCellInteractor(title: "Description".localized),
-        .galleryCollection : GalleryCellInteractor(),
-        .location : LocationCellInteractor(),
+    var cellInteractors: [Cell: CellInteractorProtocol] = [
+        .mainPhoto: MainPhotoCellInteractor(),
+        .placeName: PlaceNameCellInteractor(title: "PlaceName".localized, value: ""),
+        .description: DescriptionCellInteractor(title: "Description".localized),
+        .galleryCollection: GalleryCellInteractor(),
+        .location: LocationCellInteractor(),
     ]
     
     func getCellInteractor(for index: Int) -> CellInteractorProtocol? {
@@ -77,7 +79,7 @@ class AddFavoritePlaceInteractor: BaseTableInteractorProtocol, AddFavoritePlaceP
             let mainPhoto = mainPhotoInteractor.mainPhoto, !placeNameInteractor.value.isEmpty,
             let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return false }
         var gallery = galleryInteractor.gallery
-        gallery.remove(at: Constants.galleryPlaceHolder)
+        gallery.remove(at: galleryPlaceHolderIndex)
 
         let context = appDelegate.persistentContainer.viewContext
 

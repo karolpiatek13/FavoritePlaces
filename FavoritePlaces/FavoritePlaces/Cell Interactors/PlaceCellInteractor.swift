@@ -22,8 +22,6 @@ class PlaceCellInteractor: CellInteractorProtocol {
         cell.configure(interactor: self, place: place)
     }
     
-    var cellType: CellType {
-        return PlaceCell.self
-    }
+    var cellType: CellType { return PlaceCell.self }
 }
 

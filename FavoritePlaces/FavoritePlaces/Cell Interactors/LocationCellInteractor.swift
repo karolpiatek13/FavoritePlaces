@@ -19,7 +19,5 @@ class LocationCellInteractor: CellInteractorProtocol {
         cell.configure(interactor: self, coordinate: coordinate)
     }
     
-    var cellType: CellType {
-        return LocationCell.self
-    }
+    var cellType: CellType { return LocationCell.self }
 }

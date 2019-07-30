@@ -10,9 +10,9 @@ import UIKit
 
 class PlaceNameCell: UITableViewCell {
 
-    @IBOutlet weak var placeNameLabel: UILabel!
-    @IBOutlet weak var placeNameTextField: UITextField!
-    @IBOutlet weak var placeNameErrorLabel: UILabel!
+    @IBOutlet private weak var placeNameLabel: UILabel!
+    @IBOutlet private weak var placeNameTextField: UITextField!
+    @IBOutlet private weak var placeNameErrorLabel: UILabel!
     
     var interactor: PlaceNameCellInteractor?
 

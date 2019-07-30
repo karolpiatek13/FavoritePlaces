@@ -10,7 +10,7 @@ import UIKit
 
 class GalleryCellInteractor: CellInteractorProtocol {
     
-    var gallery : [UIImage] = [#imageLiteral(resourceName: "photoPlaceHolder")]
+    var gallery: [UIImage] = [UIImage(named: "photoPlaceHolder")!]
     var delegate: AddFavoritePlaceVC?
     var isEditable = true
     
@@ -19,7 +19,5 @@ class GalleryCellInteractor: CellInteractorProtocol {
         cell.configure(interactor: self, gallery: gallery)
     }
     
-    var cellType: CellType {
-        return GalleryCell.self
-    }
+    var cellType: CellType { return GalleryCell.self }
 }

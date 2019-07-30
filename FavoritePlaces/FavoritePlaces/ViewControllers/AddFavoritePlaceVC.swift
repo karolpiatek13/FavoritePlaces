@@ -62,9 +62,10 @@ class AddFavoritePlaceVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cellInteractor = interactor.getCellInteractor(for: indexPath.row) else {
-            return UITableViewCell()
-        }
+        
+        guard let cellInteractor = interactor.getCellInteractor(for: indexPath.row)
+            else { return UITableViewCell() }
+        
         let cellView = tableView.getReusableCellSafe(cellType: cellInteractor.cellType)
         cellInteractor.configure(cellView)
         if let cell = cellView as? DescriptionCell {
@@ -80,7 +81,7 @@ class AddFavoritePlaceVC: UITableViewController {
         switch interactor.getCellEnum(index: indexPath.row) {
         case .mainPhoto:
             showAvatarChangeOptions(picker: picker)
-        default:
+        case .placeName, .description, .galleryCollection, .location, .empty:
             break
         }
     }

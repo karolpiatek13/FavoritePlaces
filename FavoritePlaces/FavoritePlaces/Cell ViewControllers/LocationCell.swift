@@ -11,7 +11,7 @@ import MapKit
 
 class LocationCell: UITableViewCell {
 
-    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet private weak var mapView: MKMapView!
     
     var interactor: LocationCellInteractor?
     
