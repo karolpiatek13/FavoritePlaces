@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 protocol FavoritePlacesListProtocol {
-    func getCellInteractor(for index: Int) -> CellInteractorProtocol?
+    var favoritePlacesInteractors: [PlaceCellInteractor] { get }
     func getNumberOfVisibleCells() -> Int
     func getData()
     func deleteIntegratorAndCoreData(at index: Int)
@@ -41,13 +41,10 @@ class FavoritePlacesListInteractor: FavoritePlacesListProtocol {
         return favoritePlacesInteractors.count
     }
     
-    func getCellInteractor(for index: Int) -> CellInteractorProtocol? {
-        return favoritePlacesInteractors[index]
-    }
-    
     func deleteIntegratorAndCoreData(at index: Int) {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate,
-            let cellInteractor = getCellInteractor(for: index) as? PlaceCellInteractor else { return }
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate
+             else { return }
+        let cellInteractor = favoritePlacesInteractors[index]
         let context = appDelegate.persistentContainer.viewContext
         context.delete(cellInteractor.place)
         for (index, place) in favoritePlaces.enumerated() {
@@ -57,7 +54,7 @@ class FavoritePlacesListInteractor: FavoritePlacesListProtocol {
         do {
             try context.save()
         } catch {
-            print("Moving Failed")
+            print("Deleting Failed")
         }
     }
     

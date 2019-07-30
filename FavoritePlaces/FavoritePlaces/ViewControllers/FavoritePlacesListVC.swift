@@ -10,33 +10,18 @@ import UIKit
 
 class FavoritePlacesListVC: UITableViewController {
 
-    var interactor: FavoritePlacesListProtocol = FavoritePlacesListInteractor()
+    private let interactor: FavoritePlacesListProtocol = FavoritePlacesListInteractor()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.leftBarButtonItem = editButtonItem
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 90
-        tableView.separatorStyle = .none
+        configureTableView()
         configureUI()
+        interactor.getData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        localized()
-        interactor.getData()
         tableView.reloadData()
-    }
-    
-    override func setEditing(_ editing: Bool, animated: Bool) {
-        
-        if editing && !tableView.isEditing {
-            tableView.setEditing(true, animated: true)
-            editButtonItem.title = "Done".localized
-        } else {
-            tableView.setEditing(false, animated: true)
-            editButtonItem.title = "Edit".localized
-        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,26 +29,20 @@ class FavoritePlacesListVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cellInteractor = interactor.getCellInteractor(for: indexPath.row) as? PlaceCellInteractor else {
-            return UITableViewCell()
-        }
+        let cellInteractor = interactor.favoritePlacesInteractors[indexPath.row]
         let cellView = tableView.getReusableCellSafe(cellType: cellInteractor.cellType)
         cellInteractor.configure(cellView)
         cellInteractor.delegate = self
         return cellView
     }
     
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let place = interactor.favoritePlacesInteractors[indexPath.row].place
+        let vc: AddFavoritePlaceVC = AddFavoritePlaceVC()
+        vc.interactor.setValues(place: place)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle:   UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if (editingStyle == .delete) {
-            interactor.deleteIntegratorAndCoreData(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .middle)
-        }
-    }
-
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
         cell.layer.rounded(cornerRadius: 16,
@@ -72,7 +51,7 @@ class FavoritePlacesListVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        guard let movedObject = interactor.getCellInteractor(for: sourceIndexPath.row) as? PlaceCellInteractor else { return }
+        let movedObject = interactor.favoritePlacesInteractors[sourceIndexPath.row]
         interactor.changePosition(placeInteractor: movedObject, sourceIndex: sourceIndexPath.row, destinationIndex: destinationIndexPath.row)
     }
     
@@ -81,9 +60,12 @@ class FavoritePlacesListVC: UITableViewController {
     private func configureUI() {
         view.backgroundColor = Constants.backgroundColor
         tableView.backgroundColor = Constants.backgroundColor
+        title = "FavoritePlacesList.NavBar.Title".localized
     }
     
-    private func localized() {
-        title = "FavoritePlacesList.NavBar.Title".localized
+    private func configureTableView() {
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 90
+        tableView.separatorStyle = .none
     }
 }
