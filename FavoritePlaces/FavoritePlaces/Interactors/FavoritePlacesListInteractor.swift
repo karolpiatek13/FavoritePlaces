@@ -11,8 +11,8 @@ import MapKit
 
 protocol FavoritePlacesListProtocol {
     var favoritePlacesInteractors: [PlaceCellInteractor] { get }
-    func getNumberOfVisibleCells() -> Int
-    func getData()
+    var numberOfCells: Int { get }
+    func refreshData()
     func deleteIntegratorAndCoreData(at index: Int)
     func changePosition(placeInteractor: PlaceCellInteractor, sourceIndex: Int, destinationIndex: Int)
 }
@@ -22,8 +22,13 @@ class FavoritePlacesListInteractor: FavoritePlacesListProtocol {
     var favoritePlacesInteractors: [PlaceCellInteractor] = []
     var favoritePlaces: [FavoritePlace] = []
     
-    func getData() {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+    var numberOfCells: Int {
+        return favoritePlacesInteractors.count
+    }
+    
+    func refreshData(){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate
+            else { return }
         let context = appDelegate.persistentContainer.viewContext
         do {
             favoritePlaces = try context.fetch(FavoritePlace.fetchRequest())
@@ -35,10 +40,6 @@ class FavoritePlacesListInteractor: FavoritePlacesListProtocol {
         } catch {
             print("Fetching Failed")
         }
-    }
-    
-    func getNumberOfVisibleCells() -> Int {
-        return favoritePlacesInteractors.count
     }
     
     func deleteIntegratorAndCoreData(at index: Int) {

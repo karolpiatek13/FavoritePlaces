@@ -16,16 +16,16 @@ class FavoritePlacesListVC: UITableViewController {
         super.viewDidLoad()
         configureTableView()
         configureUI()
-        interactor.getData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        interactor.refreshData()
         tableView.reloadData()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return interactor.getNumberOfVisibleCells()
+        return interactor.numberOfCells
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
